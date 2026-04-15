@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SVG DECALS</title>
+<title>SVG DECALS | Elite Builder</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
 
@@ -11,96 +11,112 @@
 body{
   margin:0;
   font-family:"Inter",sans-serif;
-  background:#020409;
+  background:#02040a;
   color:#eaf2ff;
 }
 
 /* HERO */
 .hero{
   text-align:center;
-  padding:120px 20px 60px;
-  background:radial-gradient(circle at top,#0a1426,#020409);
+  padding:110px 20px 40px;
+  background:radial-gradient(circle at top,#0a152a,#02040a);
 }
 
 .hero h1{
   font-size:64px;
   letter-spacing:10px;
   color:#5aa7ff;
-  text-shadow:0 0 25px rgba(90,167,255,0.4);
-}
-
-.hero p{
-  color:#8fa6c9;
+  text-shadow:0 0 25px rgba(90,167,255,0.5);
 }
 
 /* LAYOUT */
 .container{
   max-width:1100px;
   margin:auto;
-  padding:40px 20px;
+  padding:30px 20px;
 }
 
 .grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:30px;
+  gap:25px;
 }
 
 /* CARD */
 .card{
-  background:#050b17;
-  border:1px solid #13203a;
+  background:#050b18;
+  border:1px solid #13233f;
   border-radius:16px;
   padding:20px;
-  box-shadow:0 0 30px rgba(0,0,0,0.6);
 }
 
-/* INPUT */
+/* INPUTS */
 input,select,textarea{
   width:100%;
   padding:12px;
   margin:8px 0;
   border-radius:10px;
-  border:1px solid #1f2f55;
-  background:#020409;
-  color:white;
+  border:1px solid #223456;
+  background:#02040a;
+  color:#fff;
 }
 
 /* PREVIEW */
 .preview{
-  height:220px;
-  background:linear-gradient(#000,#111);
+  height:260px;
   display:flex;
   align-items:center;
   justify-content:center;
   border-radius:14px;
-  border:1px solid #1f2f55;
-  font-size:42px;
+  background:linear-gradient(145deg,#000,#0a0f1d);
+  border:1px solid #223456;
+  font-size:44px;
   font-weight:700;
-  letter-spacing:2px;
-  text-shadow:0 0 10px rgba(255,255,255,0.3);
+  text-shadow:0 0 20px rgba(255,255,255,0.2);
+  transition:0.2s;
+}
+
+/* SUMMARY */
+.summary{
+  font-size:13px;
+  color:#93a7c6;
+  margin-top:10px;
 }
 
 /* BUTTON */
 .btn{
-  margin-top:10px;
   padding:12px;
-  border-radius:10px;
   border:1px solid #5aa7ff;
   color:#5aa7ff;
   background:none;
+  border-radius:10px;
   cursor:pointer;
 }
 
 .btn:hover{
   background:#5aa7ff;
-  color:#020409;
+  color:#02040a;
 }
 
-.summary{
-  margin-top:10px;
-  font-size:14px;
-  color:#9fb3d6;
+/* UPLOAD */
+input[type="file"]{
+  padding:10px;
+}
+
+/* GALLERY */
+.gallery{
+  margin-top:40px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
+}
+
+.gallery img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:14px;
+  border:1px solid #1b2a47;
 }
 </style>
 </head>
@@ -109,7 +125,7 @@ input,select,textarea{
 
 <div class="hero">
 <h1>SVG DECALS</h1>
-<p>Built for clean installs • Car scene approved</p>
+<p>Final Boss Builder • Car Scene Ready • Pro Grade Workflow</p>
 </div>
 
 <div class="container">
@@ -119,18 +135,21 @@ input,select,textarea{
 <!-- BUILDER -->
 <div class="card">
 
-<form action="https://formspree.io/f/xzdydgap" method="POST">
+<form action="https://formspree.io/f/xzdydgap" method="POST" enctype="multipart/form-data">
 
-<input id="ig" name="instagram_name" placeholder="Instagram Name (@yourname)" required>
-<input name="zelle_name" placeholder="Zelle Name" required>
+<input id="textInput" name="text" placeholder="Instagram / Decal Text" required>
 
-<input id="textInput" name="text" placeholder="Enter decal text" required>
-
-<label>Font (from dafont.com)</label>
-<input id="fontInput" name="font" placeholder="Type font name">
+<label>Font Style</label>
+<select id="fontSelect" name="font">
+<option value="Inter">Default Clean</option>
+<option value="Impact">Racing Block</option>
+<option value="cursive">Script</option>
+<option value="monospace">Tech/JDM</option>
+<option value="Arial Black">Bold Street</option>
+</select>
 
 <label>Primary Color</label>
-<select id="color" name="primary_color">
+<select id="color" name="color">
 <option value="white">White</option>
 <option value="red">Red</option>
 <option value="orange">Orange</option>
@@ -142,62 +161,69 @@ input,select,textarea{
 <option value="silver">Chrome</option>
 </select>
 
-<label>Layer (+$5)</label>
-<select id="layer" name="layer">
-<option>No</option>
-<option>Yes</option>
-</select>
+<label>Upload Reference Image</label>
+<input type="file" name="image">
 
-<textarea name="notes" placeholder="Notes (placement, size, custom requests)"></textarea>
+<label>Notes</label>
+<textarea name="notes" placeholder="Placement, sizing, custom requests"></textarea>
 
 <button class="btn" type="submit">Submit Order</button>
 
 </form>
 
-<p style="font-size:12px;color:#7f95b8;">
-Browse fonts at https://www.dafont.com
-</p>
+<div class="summary" id="summary"></div>
 
 </div>
 
 <!-- PREVIEW -->
 <div class="card">
 
-<div class="preview" id="previewText">
-YOUR TEXT
+<div class="preview" id="preview">
+YOUR DESIGN
 </div>
 
-<div class="summary" id="summary">
-Live preview will update here
+<div class="summary" id="liveSummary">
+Live preview updates here
 </div>
 
 </div>
 
+</div>
+
+<!-- GALLERY -->
+<div class="gallery">
+<img src="IMG1.png">
+<img src="IMG2.png">
+<img src="IMG3.png">
+<img src="IMG4.png">
 </div>
 
 </div>
 
 <script>
+
 const textInput = document.getElementById("textInput");
-const preview = document.getElementById("previewText");
+const fontSelect = document.getElementById("fontSelect");
 const color = document.getElementById("color");
-const fontInput = document.getElementById("fontInput");
-const summary = document.getElementById("summary");
+const preview = document.getElementById("preview");
+const liveSummary = document.getElementById("liveSummary");
 
-function updatePreview(){
-  preview.innerText = textInput.value || "YOUR TEXT";
+function update(){
+
+  preview.innerText = textInput.value || "YOUR DESIGN";
   preview.style.color = color.value;
-  preview.style.fontFamily = fontInput.value || "Inter";
+  preview.style.fontFamily = fontSelect.value;
 
-  summary.innerHTML =
+  liveSummary.innerHTML =
     "Text: " + (textInput.value || "-") + "<br>" +
-    "Color: " + color.value + "<br>" +
-    "Font: " + (fontInput.value || "-");
+    "Font: " + fontSelect.value + "<br>" +
+    "Color: " + color.value;
 }
 
-textInput.addEventListener("input", updatePreview);
-color.addEventListener("change", updatePreview);
-fontInput.addEventListener("input", updatePreview);
+textInput.addEventListener("input", update);
+fontSelect.addEventListener("change", update);
+color.addEventListener("change", update);
+
 </script>
 
 </body>
