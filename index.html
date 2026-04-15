@@ -3,150 +3,134 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SVG DECALS | Neon Garage Store</title>
+<title>SVG DECALS | Order Builder</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
+
 body{
   margin:0;
   font-family:"Inter",sans-serif;
-  color:#EAF2FF;
-  background:
-    radial-gradient(circle at 15% 20%, rgba(0,180,255,0.18), transparent 45%),
-    radial-gradient(circle at 85% 25%, rgba(140,90,255,0.16), transparent 50%),
-    radial-gradient(circle at 50% 85%, rgba(255,60,120,0.10), transparent 55%),
-    linear-gradient(180deg, #05070D, #070A12);
+  background:#0b0f16;
+  color:#eaf2ff;
 }
 
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
-  background-size:70px 70px;
-  opacity:0.15;
-  pointer-events:none;
-}
-
-body::after{
-  content:"";
-  position:fixed;
-  inset:0;
-  background:
-    radial-gradient(circle at 30% 30%, rgba(0,180,255,0.08), transparent 55%),
-    radial-gradient(circle at 70% 60%, rgba(140,90,255,0.06), transparent 60%);
-  animation:floatGlow 10s ease-in-out infinite alternate;
-  pointer-events:none;
-}
-
-@keyframes floatGlow{
-  from{transform:translate(0,0);}
-  to{transform:translate(12px,-10px);}
-}
-
-.topbar{
-  height:3px;
-  background:linear-gradient(90deg,#00c2ff,#7c5cff,#ff3c7a);
-  position:fixed;
-  top:0;
-  width:100%;
-}
-
+/* SIMPLE CLEAN HEADER */
 .hero{
   text-align:center;
-  padding:110px 20px 25px;
+  padding:80px 20px 20px;
 }
 
 .hero h1{
-  font-size:62px;
-  letter-spacing:10px;
-  color:#BDE7FF;
-  text-shadow:0 0 30px rgba(0,180,255,0.25);
+  font-size:48px;
+  letter-spacing:6px;
+  margin:0;
 }
 
 .container{
-  max-width:920px;
+  max-width:850px;
   margin:auto;
-  padding:25px;
+  padding:20px;
 }
 
+/* CLEAN CARD */
 .card{
-  background:rgba(10,14,25,0.72);
-  border:1px solid rgba(255,255,255,0.08);
-  border-radius:22px;
-  padding:22px;
-  backdrop-filter:blur(16px);
+  background:#111826;
+  border:1px solid #1f2a3a;
+  border-radius:14px;
+  padding:18px;
 }
 
+/* INPUTS */
 input,select,textarea{
   width:100%;
-  padding:13px;
-  margin:9px 0;
-  border-radius:12px;
-  border:1px solid rgba(255,255,255,0.08);
-  background:rgba(5,7,12,0.9);
+  padding:12px;
+  margin:8px 0;
+  border-radius:10px;
+  border:1px solid #223044;
+  background:#0b0f16;
   color:white;
 }
 
+/* BUTTON */
 .btn{
   width:100%;
-  padding:13px;
-  border-radius:12px;
-  border:1px solid rgba(0,194,255,0.5);
-  background:rgba(0,0,0,0.2);
-  color:#BDE7FF;
+  padding:12px;
+  border-radius:10px;
+  border:1px solid #3aa0ff;
+  background:#0b0f16;
+  color:#3aa0ff;
   cursor:pointer;
 }
 
 .btn:hover{
-  background:rgba(0,194,255,0.15);
+  background:#3aa0ff;
+  color:#0b0f16;
 }
 
+/* PRICE BOX */
+.priceBox{
+  background:#0b1220;
+  border:1px solid #24344a;
+  padding:12px;
+  border-radius:10px;
+  margin:10px 0;
+  font-size:14px;
+}
+
+/* PREVIEW */
 .preview{
-  height:270px;
+  height:220px;
   display:flex;
   align-items:center;
   justify-content:center;
-  border-radius:18px;
-  font-size:46px;
+  font-size:40px;
   font-weight:700;
-  letter-spacing:2px;
-  background:rgba(5,7,12,0.6);
-  border:1px solid rgba(255,255,255,0.08);
+  border-radius:12px;
+  background:#0b0f16;
+  border:1px solid #1f2a3a;
+  margin-top:15px;
 }
 
-.info{
-  font-size:13px;
-  color:#93a9bf;
-}
-
+/* GALLERY */
 .gallery{
-  margin-top:45px;
+  margin-top:30px;
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
-  gap:14px;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:10px;
 }
 
 .gallery img{
   width:100%;
-  height:210px;
+  height:180px;
   object-fit:cover;
-  border-radius:16px;
-  border:1px solid rgba(255,255,255,0.08);
+  border-radius:10px;
+  border:1px solid #1f2a3a;
 }
+
+/* INFO */
+.info{
+  font-size:13px;
+  color:#9fb3c8;
+  margin-top:10px;
+}
+
+/* HIDDEN CONFIRM */
+.confirm{
+  display:none;
+  text-align:center;
+  padding:40px 20px;
+}
+
 </style>
 </head>
 
 <body>
 
-<div class="topbar"></div>
-
 <div class="hero">
 <h1>SVG DECALS</h1>
-<p>Neon Garage Custom Vinyl Builder</p>
+<p>Custom Vinyl Order Builder</p>
 </div>
 
 <div class="container">
@@ -159,97 +143,75 @@ input,select,textarea{
 
 <input name="zelle_name" placeholder="Name on Zelle Payment" required>
 
-<!-- ================= FONT EXPANDED ================= -->
-<label>Font Style</label>
+<!-- FONT -->
+<label>Font</label>
 <select id="fontSelect" name="font">
+<option>Inter</option>
+<option>Arial</option>
+<option>Impact</option>
+<option>Courier New</option>
+<option>Georgia</option>
+<option>Tahoma</option>
+<option>Verdana</option>
+<option>Lucida Console</option>
+<option>Futura</option>
+</select>
 
-<!-- CLEAN -->
-<option value="Inter">Default Clean</option>
-<option value="Arial">Arial Clean</option>
-<option value="Verdana">Modern Clean</option>
-<option value="Tahoma">OEM Clean</option>
-<option value="Helvetica">Minimal Pro</option>
-
-<!-- BOLD / STREET -->
-<option value="Impact">Racing Block</option>
-<option value="Arial Black">Street Bold</option>
-<option value="Franklin Gothic Medium">Aggressive Bold</option>
-<option value="Trebuchet MS">Sport Style</option>
-<option value="Bebas Neue">Race Banner</option>
-
-<!-- TECH / JDM -->
-<option value="monospace">JDM Tech</option>
-<option value="Courier New">Garage Code</option>
-<option value="Lucida Console">Tuner Tech</option>
-<option value="Consolas">Digital Dash</option>
-
-<!-- SCRIPT / STYLE -->
-<option value="cursive">Script Flow</option>
-<option value="Georgia">Classic Serif</option>
-<option value="Palatino">Luxury Script</option>
-<option value="Brush Script MT">Sticker Script</option>
-
-<!-- UNIQUE -->
-<option value="Gill Sans">Euro Clean</option>
-<option value="Futura">Modern Brand</option>
-<option value="Optima">Premium Clean</option>
-
+<!-- SIZE -->
+<label>Size (Pricing Based)</label>
+<select id="size" name="size">
+<option value="5">$10 - 5 inch</option>
+<option value="6">$12 - 6 inch</option>
+<option value="7">$14 - 7 inch</option>
+<option value="8">$16 - 8 inch</option>
 </select>
 
 <!-- PRIMARY COLOR -->
 <label>Primary Color</label>
 <select name="primary_color">
 <option>White</option>
+<option>Black</option>
 <option>Red</option>
-<option>Orange</option>
-<option>Yellow</option>
-<option>Green</option>
 <option>Blue</option>
-<option>Purple</option>
 <option>Pink</option>
+<option>Purple</option>
 <option>Chrome</option>
 </select>
 
-<!-- LAYER -->
-<label>Layer Option</label>
-<select name="layer">
-<option>No</option>
-<option>Yes</option>
+<!-- LAYER OPTION -->
+<label>Layered Option (if applicable)</label>
+<select id="layer" name="layer">
+<option value="no">No</option>
+<option value="yes">Yes (+$5)</option>
 </select>
 
 <!-- LAYER COLOR -->
-<label>Layer Color (Background)</label>
+<label>Layer Color (only applies if layered selected)</label>
 <select name="layer_color">
 <option>White</option>
+<option>Black</option>
 <option>Red</option>
-<option>Orange</option>
-<option>Yellow</option>
-<option>Green</option>
 <option>Blue</option>
-<option>Purple</option>
 <option>Pink</option>
+<option>Purple</option>
 <option>Chrome</option>
-</select>
-
-<!-- SIZE -->
-<label>Size</label>
-<select name="size">
-<option>5 inch</option>
-<option>6 inch</option>
-<option>7 inch</option>
-<option>8 inch</option>
 </select>
 
 <textarea name="notes" placeholder="Notes / placement / custom requests"></textarea>
 
 <input type="hidden" id="orderID" name="order_id">
 
+<!-- PRICE DISPLAY -->
+<div class="priceBox" id="priceBox">
+Estimated Price: $10+
+</div>
+
 <button class="btn" type="submit">Submit Order</button>
 
 </form>
 
 <div class="info">
-Send Zelle to: <b>SVG DECALS</b><br>
+Zelle: <b>SVG DECALS</b><br>
 Email: <b>SVG.mixchell3@gmail.com</b>
 </div>
 
@@ -258,7 +220,7 @@ Email: <b>SVG.mixchell3@gmail.com</b>
 <!-- PREVIEW -->
 <div class="preview" id="preview">LIVE PREVIEW</div>
 
-<!-- GALLERY -->
+<!-- IMAGES -->
 <div class="gallery">
 <img src="IMG1.png">
 <img src="IMG2.png">
@@ -271,22 +233,47 @@ Email: <b>SVG.mixchell3@gmail.com</b>
 <script>
 
 const form = document.getElementById("orderForm");
-const orderID = "SVG-" + Math.floor(1000 + Math.random() * 9000);
-document.getElementById("orderID")?.setAttribute("value", orderID);
 
+const orderID = "SVG-" + Math.floor(1000 + Math.random() * 9000);
+document.getElementById("orderID").value = orderID;
+
+/* PREVIEW */
 const textInput = document.getElementById("textInput");
 const fontSelect = document.getElementById("fontSelect");
 const preview = document.getElementById("preview");
 
-function update(){
+function updatePreview(){
   preview.innerText = textInput.value || "LIVE PREVIEW";
   preview.style.fontFamily = fontSelect.value;
 }
 
-textInput.addEventListener("input", update);
-fontSelect.addEventListener("change", update);
+textInput.addEventListener("input", updatePreview);
+fontSelect.addEventListener("change", updatePreview);
+
+/* PRICING SYSTEM */
+const sizeSelect = document.getElementById("size");
+const layerSelect = document.getElementById("layer");
+const priceBox = document.getElementById("priceBox");
+
+function updatePrice(){
+  let price = 10;
+
+  if(sizeSelect.value === "6") price = 12;
+  if(sizeSelect.value === "7") price = 14;
+  if(sizeSelect.value === "8") price = 16;
+
+  if(layerSelect.value === "yes") price += 5;
+
+  priceBox.innerText = "Estimated Price: $" + price;
+}
+
+sizeSelect.addEventListener("change", updatePrice);
+layerSelect.addEventListener("change", updatePrice);
 
 </script>
 
 </body>
 </html>
+
+
+
