@@ -8,222 +8,134 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-/* =========================
-   BASE / BRAND
-========================= */
 body{
   margin:0;
   font-family:"Inter",sans-serif;
   color:#EAF2FF;
   background:
-    radial-gradient(circle at 20% 20%, rgba(77,163,255,0.18), transparent 45%),
-    radial-gradient(circle at 80% 30%, rgba(168,85,247,0.15), transparent 50%),
-    radial-gradient(circle at 50% 80%, rgba(255,59,92,0.10), transparent 55%),
-    #070A12;
-  overflow-x:hidden;
-  animation:fadeIn 0.8s ease;
+    radial-gradient(circle at 15% 20%, rgba(0,180,255,0.18), transparent 45%),
+    radial-gradient(circle at 85% 25%, rgba(140,90,255,0.16), transparent 50%),
+    radial-gradient(circle at 50% 85%, rgba(255,60,120,0.10), transparent 55%),
+    linear-gradient(180deg, #05070D, #070A12);
 }
 
-/* neon grid overlay */
 body::before{
   content:"";
   position:fixed;
   inset:0;
   background-image:
-    linear-gradient(rgba(77,163,255,0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(77,163,255,0.07) 1px, transparent 1px);
-  background-size:60px 60px;
-  opacity:0.25;
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size:70px 70px;
+  opacity:0.15;
   pointer-events:none;
 }
 
-/* moving glow */
 body::after{
   content:"";
   position:fixed;
   inset:0;
   background:
-    radial-gradient(circle at 30% 30%, rgba(77,163,255,0.08), transparent 50%),
-    radial-gradient(circle at 70% 60%, rgba(168,85,247,0.06), transparent 55%);
-  animation:glowMove 8s ease-in-out infinite alternate;
+    radial-gradient(circle at 30% 30%, rgba(0,180,255,0.08), transparent 55%),
+    radial-gradient(circle at 70% 60%, rgba(140,90,255,0.06), transparent 60%);
+  animation:floatGlow 10s ease-in-out infinite alternate;
   pointer-events:none;
 }
 
-/* =========================
-   TOP BAR
-========================= */
-.topbar{
-  height:4px;
-  background:linear-gradient(90deg,#4DA3FF,#A855F7,#FF3B5C);
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  z-index:999;
+@keyframes floatGlow{
+  from{transform:translate(0,0);}
+  to{transform:translate(12px,-10px);}
 }
 
-/* =========================
-   HERO
-========================= */
+.topbar{
+  height:3px;
+  background:linear-gradient(90deg,#00c2ff,#7c5cff,#ff3c7a);
+  position:fixed;
+  top:0;
+  width:100%;
+}
+
 .hero{
   text-align:center;
-  padding:110px 20px 20px;
+  padding:110px 20px 25px;
 }
 
 .hero h1{
-  font-size:60px;
-  letter-spacing:8px;
-  color:#4DA3FF;
-  text-shadow:0 0 30px rgba(77,163,255,0.45);
+  font-size:62px;
+  letter-spacing:10px;
+  color:#BDE7FF;
+  text-shadow:0 0 30px rgba(0,180,255,0.25);
 }
 
-.hero p{
-  color:#93a7c6;
-}
-
-/* =========================
-   LAYOUT
-========================= */
 .container{
-  max-width:900px;
+  max-width:920px;
   margin:auto;
-  padding:20px;
+  padding:25px;
 }
 
-/* =========================
-   CARD
-========================= */
 .card{
-  background:rgba(12,18,34,0.85);
-  border:1px solid rgba(77,163,255,0.2);
-  border-radius:18px;
-  padding:20px;
-  box-shadow:0 20px 60px rgba(0,0,0,0.6);
-  backdrop-filter:blur(12px);
-  animation:cardIn 0.8s ease;
+  background:rgba(10,14,25,0.72);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:22px;
+  padding:22px;
+  backdrop-filter:blur(16px);
 }
 
-/* =========================
-   INPUTS
-========================= */
 input,select,textarea{
   width:100%;
-  padding:12px;
-  margin:8px 0;
-  border-radius:10px;
-  border:1px solid #223456;
-  background:#070A12;
-  color:#fff;
+  padding:13px;
+  margin:9px 0;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.08);
+  background:rgba(5,7,12,0.9);
+  color:white;
 }
 
-/* =========================
-   BUTTON
-========================= */
 .btn{
   width:100%;
-  padding:12px;
-  border-radius:10px;
-  border:1px solid #4DA3FF;
-  background:none;
-  color:#4DA3FF;
+  padding:13px;
+  border-radius:12px;
+  border:1px solid rgba(0,194,255,0.5);
+  background:rgba(0,0,0,0.2);
+  color:#BDE7FF;
   cursor:pointer;
-  transition:0.2s;
 }
 
 .btn:hover{
-  background:#4DA3FF;
-  color:#070A12;
-  box-shadow:0 0 25px rgba(77,163,255,0.5);
+  background:rgba(0,194,255,0.15);
 }
 
-/* =========================
-   PREVIEW
-========================= */
 .preview{
-  height:260px;
+  height:270px;
   display:flex;
   align-items:center;
   justify-content:center;
-  border-radius:16px;
-  font-size:44px;
+  border-radius:18px;
+  font-size:46px;
   font-weight:700;
   letter-spacing:2px;
-  background:
-    radial-gradient(circle at top, rgba(77,163,255,0.15), transparent 60%),
-    linear-gradient(145deg, rgba(255,255,255,0.05), rgba(0,0,0,0.25));
-  border:1px solid rgba(77,163,255,0.25);
-  box-shadow:inset 0 0 40px rgba(0,0,0,0.6);
+  background:rgba(5,7,12,0.6);
+  border:1px solid rgba(255,255,255,0.08);
 }
 
-/* =========================
-   INFO TEXT
-========================= */
 .info{
   font-size:13px;
-  color:#9ab0d1;
-  margin-top:10px;
-  line-height:1.5;
+  color:#93a9bf;
 }
 
-/* =========================
-   GALLERY
-========================= */
 .gallery{
-  margin-top:40px;
+  margin-top:45px;
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:15px;
+  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  gap:14px;
 }
 
 .gallery img{
   width:100%;
-  height:200px;
+  height:210px;
   object-fit:cover;
-  border-radius:14px;
-  border:1px solid rgba(77,163,255,0.2);
-  transition:0.3s;
-}
-
-.gallery img:hover{
-  transform:scale(1.03);
-  box-shadow:0 10px 30px rgba(77,163,255,0.2);
-}
-
-/* =========================
-   CONFIRM SCREEN
-========================= */
-.confirm{
-  display:none;
-  text-align:center;
-  padding:40px 20px;
-  animation:popIn 0.6s ease;
-}
-
-.confirm h2{
-  color:#4DA3FF;
-}
-
-/* =========================
-   ANIMATIONS
-========================= */
-@keyframes fadeIn{
-  from{opacity:0; transform:translateY(10px);}
-  to{opacity:1; transform:translateY(0);}
-}
-
-@keyframes cardIn{
-  from{opacity:0; transform:translateY(20px);}
-  to{opacity:1; transform:translateY(0);}
-}
-
-@keyframes glowMove{
-  from{transform:translate(0,0);}
-  to{transform:translate(10px,-10px);}
-}
-
-@keyframes popIn{
-  from{opacity:0; transform:scale(0.95);}
-  to{opacity:1; transform:scale(1);}
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,0.08);
 }
 </style>
 </head>
@@ -234,12 +146,11 @@ input,select,textarea{
 
 <div class="hero">
 <h1>SVG DECALS</h1>
-<p>Neon Garage Custom Vinyl Store</p>
+<p>Neon Garage Custom Vinyl Builder</p>
 </div>
 
 <div class="container">
 
-<!-- FORM -->
 <div class="card" id="formCard">
 
 <form id="orderForm" action="https://formspree.io/f/xzdydgap" method="POST">
@@ -248,38 +159,79 @@ input,select,textarea{
 
 <input name="zelle_name" placeholder="Name on Zelle Payment" required>
 
+<!-- ================= FONT EXPANDED ================= -->
 <label>Font Style</label>
 <select id="fontSelect" name="font">
 
+<!-- CLEAN -->
 <option value="Inter">Default Clean</option>
+<option value="Arial">Arial Clean</option>
+<option value="Verdana">Modern Clean</option>
+<option value="Tahoma">OEM Clean</option>
+<option value="Helvetica">Minimal Pro</option>
+
+<!-- BOLD / STREET -->
 <option value="Impact">Racing Block</option>
 <option value="Arial Black">Street Bold</option>
-<option value="cursive">Script Flow</option>
-<option value="monospace">JDM Tech</option>
-<option value="Tahoma">OEM Clean</option>
-<option value="Verdana">Modern Clean</option>
-<option value="Georgia">Classic Serif</option>
-<option value="Courier New">Typewriter</option>
-<option value="Trebuchet MS">Sport Style</option>
 <option value="Franklin Gothic Medium">Aggressive Bold</option>
-<option value="Lucida Console">Garage Tech</option>
+<option value="Trebuchet MS">Sport Style</option>
+<option value="Bebas Neue">Race Banner</option>
+
+<!-- TECH / JDM -->
+<option value="monospace">JDM Tech</option>
+<option value="Courier New">Garage Code</option>
+<option value="Lucida Console">Tuner Tech</option>
+<option value="Consolas">Digital Dash</option>
+
+<!-- SCRIPT / STYLE -->
+<option value="cursive">Script Flow</option>
+<option value="Georgia">Classic Serif</option>
 <option value="Palatino">Luxury Script</option>
+<option value="Brush Script MT">Sticker Script</option>
+
+<!-- UNIQUE -->
+<option value="Gill Sans">Euro Clean</option>
+<option value="Futura">Modern Brand</option>
+<option value="Optima">Premium Clean</option>
 
 </select>
 
+<!-- PRIMARY COLOR -->
 <label>Primary Color</label>
-<select id="color" name="color">
-<option value="white">White</option>
-<option value="red">Red</option>
-<option value="orange">Orange</option>
-<option value="yellow">Yellow</option>
-<option value="green">Green</option>
-<option value="blue">Blue</option>
-<option value="purple">Purple</option>
-<option value="pink">Pink</option>
-<option value="silver">Chrome</option>
+<select name="primary_color">
+<option>White</option>
+<option>Red</option>
+<option>Orange</option>
+<option>Yellow</option>
+<option>Green</option>
+<option>Blue</option>
+<option>Purple</option>
+<option>Pink</option>
+<option>Chrome</option>
 </select>
 
+<!-- LAYER -->
+<label>Layer Option</label>
+<select name="layer">
+<option>No</option>
+<option>Yes</option>
+</select>
+
+<!-- LAYER COLOR -->
+<label>Layer Color (Background)</label>
+<select name="layer_color">
+<option>White</option>
+<option>Red</option>
+<option>Orange</option>
+<option>Yellow</option>
+<option>Green</option>
+<option>Blue</option>
+<option>Purple</option>
+<option>Pink</option>
+<option>Chrome</option>
+</select>
+
+<!-- SIZE -->
 <label>Size</label>
 <select name="size">
 <option>5 inch</option>
@@ -288,13 +240,7 @@ input,select,textarea{
 <option>8 inch</option>
 </select>
 
-<label>Layer (+$5)</label>
-<select name="layer">
-<option>No</option>
-<option>Yes</option>
-</select>
-
-<textarea name="notes" placeholder="Notes (placement, custom requests)"></textarea>
+<textarea name="notes" placeholder="Notes / placement / custom requests"></textarea>
 
 <input type="hidden" id="orderID" name="order_id">
 
@@ -303,20 +249,14 @@ input,select,textarea{
 </form>
 
 <div class="info">
-<strong>Zelle Payment Info:</strong><br>
-Send to: <b>SVG DECALS</b><br>
-Email: <b>SVG.mixchell3@gmail.com</b><br><br>
-After submitting, DM your Instagram with your Order ID.
+Send Zelle to: <b>SVG DECALS</b><br>
+Email: <b>SVG.mixchell3@gmail.com</b>
 </div>
 
 </div>
 
-<!-- CONFIRM -->
-<div class="confirm" id="confirmScreen">
-<h2>Order Received ✅</h2>
-<p id="orderText"></p>
-<p class="info">Send payment via Zelle and DM your Order ID.</p>
-</div>
+<!-- PREVIEW -->
+<div class="preview" id="preview">LIVE PREVIEW</div>
 
 <!-- GALLERY -->
 <div class="gallery">
@@ -331,38 +271,20 @@ After submitting, DM your Instagram with your Order ID.
 <script>
 
 const form = document.getElementById("orderForm");
-const confirmScreen = document.getElementById("confirmScreen");
-const formCard = document.getElementById("formCard");
-
 const orderID = "SVG-" + Math.floor(1000 + Math.random() * 9000);
-document.getElementById("orderID").value = orderID;
+document.getElementById("orderID")?.setAttribute("value", orderID);
 
 const textInput = document.getElementById("textInput");
 const fontSelect = document.getElementById("fontSelect");
-const color = document.getElementById("color");
-const preview = document.createElement("div");
-
-formCard.appendChild(preview);
-preview.className = "preview";
-preview.innerText = "LIVE PREVIEW";
+const preview = document.getElementById("preview");
 
 function update(){
   preview.innerText = textInput.value || "LIVE PREVIEW";
-  preview.style.color = color.value;
   preview.style.fontFamily = fontSelect.value;
 }
 
 textInput.addEventListener("input", update);
 fontSelect.addEventListener("change", update);
-color.addEventListener("change", update);
-
-form.addEventListener("submit", function(e){
-  document.getElementById("orderText").innerHTML =
-    "Your Order ID: <b>" + orderID + "</b>";
-
-  formCard.style.display = "none";
-  confirmScreen.style.display = "block";
-});
 
 </script>
 
