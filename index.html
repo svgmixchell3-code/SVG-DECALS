@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SVG DECALS | Studio Store</title>
+<title>SVG DECALS | Premium Vinyl</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -13,7 +13,7 @@ html{scroll-behavior:smooth;}
 body{
   margin:0;
   font-family:"Inter",sans-serif;
-  background:#06080d;
+  background:#070a10;
   color:#eef3fb;
 }
 
@@ -24,7 +24,7 @@ nav{
   width:100%;
   display:flex;
   justify-content:center;
-  gap:26px;
+  gap:28px;
   padding:14px;
   background:rgba(10,12,18,0.8);
   backdrop-filter:blur(14px);
@@ -34,77 +34,81 @@ nav{
 
 nav a{
   font-size:13px;
-  color:#cfd8e4;
   text-decoration:none;
+  color:#cfd8e4;
 }
 
-nav a:hover{
-  color:#5aa7ff;
-}
+nav a:hover{color:#5aa7ff;}
 
 /* HERO */
 .hero{
-  height:85vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
   text-align:center;
-  background:radial-gradient(circle at top,#121a2d,#06080d);
+  padding:150px 20px 100px;
+  background:radial-gradient(circle at top,#121a2d,#070a10);
 }
 
 .hero h1{
-  font-size:74px;
-  letter-spacing:12px;
+  font-size:70px;
+  letter-spacing:10px;
   margin:0;
 }
 
 .hero p{
   color:#aab6c7;
-  max-width:600px;
+  margin-top:10px;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 24px;
+  border-radius:12px;
+  border:1px solid #5aa7ff;
+  color:#5aa7ff;
+  text-decoration:none;
+  transition:0.2s;
+}
+
+.btn:hover{
+  background:#5aa7ff;
+  color:#070a10;
 }
 
 /* SECTIONS */
 .section{
-  max-width:1150px;
+  max-width:1100px;
   margin:auto;
-  padding:90px 20px;
+  padding:80px 20px;
 }
 
 .title{
-  font-size:34px;
+  font-size:32px;
   margin-bottom:20px;
 }
 
-/* PRODUCT GRID */
+/* GRID */
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:18px;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:20px;
 }
 
-/* PRODUCT CARD */
+/* CARD */
 .card{
   background:#0d1320;
   border:1px solid #1c2333;
   border-radius:18px;
   padding:20px;
-  transition:0.25s;
-}
-
-.card:hover{
-  transform:translateY(-8px);
-  border-color:#5aa7ff;
 }
 
 /* FORM */
-input,select{
+input,select,textarea{
   width:100%;
   padding:12px;
-  margin:7px 0;
+  margin:8px 0;
   border-radius:10px;
   border:1px solid #26324a;
-  background:#06080d;
+  background:#070a10;
   color:#eef3fb;
 }
 
@@ -113,11 +117,12 @@ input,select{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:10px;
+  margin:10px 0;
 }
 
 .size-option{
-  text-align:center;
   padding:11px;
+  text-align:center;
   border-radius:10px;
   border:1px solid #26324a;
   cursor:pointer;
@@ -143,61 +148,26 @@ input,select{
   border-radius:14px;
   border:1px solid #1c2333;
 }
-
-/* BUTTON */
-.btn{
-  padding:12px 22px;
-  border-radius:12px;
-  border:1px solid #5aa7ff;
-  color:#5aa7ff;
-  background:none;
-  cursor:pointer;
-}
-
-.btn:hover{
-  background:#5aa7ff;
-  color:#06080d;
-}
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <nav>
 <a href="#shop">SHOP</a>
 <a href="#build">BUILD</a>
 <a href="#gallery">GALLERY</a>
-<a href="#tags">TAGS</a>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
 <h1>SVG DECALS</h1>
-<p>Premium vinyl studio for automotive culture — built for clean installs & long durability</p>
+<p>Premium automotive vinyl • Weatherproof • Clean installs</p>
+<a class="btn" href="https://instagram.com/svg.mixchell3" target="_blank">Instagram</a>
 </div>
 
-<!-- SHOP -->
-<div id="shop" class="section">
-<div class="title">SHOP PRODUCTS</div>
-
-<div class="grid">
-<div class="card">
-<h3>Custom Stickers</h3>
-<p>Weatherproof vinyl branding stickers.</p>
-</div>
-
-<div class="card">
-<h3>Vinyl Banners</h3>
-<p>Car meets, shops, and event banners.</p>
-</div>
-
-<div class="card">
-<h3>Instagram Tags</h3>
-<p>Clean build branding decals.</p>
-</div>
-</div>
-</div>
-
-<!-- BUILDER -->
+<!-- BUILD -->
 <div id="build" class="section">
 <div class="title">BUILD YOUR DECAL</div>
 
@@ -207,9 +177,13 @@ input,select{
 
 <form action="https://formspree.io/f/xzdydgap" method="POST">
 
-<input name="name" placeholder="Full Name" required>
-<input name="zelle" placeholder="Zelle Name" required>
+<!-- INSTAGRAM -->
+<input name="instagram_name" placeholder="Instagram Name (@yourname)" required>
 
+<!-- ZELLE -->
+<input name="zelle_name" placeholder="Zelle Name" required>
+
+<!-- SIZE -->
 <div class="size-grid">
 <div class="size-option active">5x2</div>
 <div class="size-option">6x2</div>
@@ -217,10 +191,15 @@ input,select{
 <div class="size-option">8x2</div>
 </div>
 
+<!-- COLORS -->
 <label>Primary Color</label>
-<select name="primary">
-<option>Black</option><option>White</option><option>Red</option>
-<option>Chrome</option><option>Holographic</option>
+<select name="primary_color">
+<option>Black</option>
+<option>White</option>
+<option>Red</option>
+<option>Blue</option>
+<option>Chrome</option>
+<option>Holographic</option>
 </select>
 
 <label>Layer (+$5)</label>
@@ -230,10 +209,16 @@ input,select{
 </select>
 
 <label>Secondary Color</label>
-<select name="secondary">
-<option>None</option><option>Black</option><option>White</option>
-<option>Chrome</option><option>Holographic</option>
+<select name="secondary_color">
+<option>None</option>
+<option>Black</option>
+<option>White</option>
+<option>Chrome</option>
+<option>Holographic</option>
 </select>
+
+<!-- NOTES -->
+<textarea name="notes" placeholder="Any notes (placement, sizing, custom requests)" rows="4"></textarea>
 
 <button class="btn" type="submit">Submit Order</button>
 
@@ -260,12 +245,16 @@ input,select{
 </div>
 
 <script>
-document.querySelectorAll(".size-option").forEach(b=>{
-b.onclick=()=>{
-document.querySelectorAll(".size-option").forEach(x=>x.classList.remove("active"));
-b.classList.add("active");
+// SIZE SELECT
+document.querySelectorAll(".size-option").forEach(btn=>{
+btn.onclick=()=>{
+document.querySelectorAll(".size-option").forEach(b=>b.classList.remove("active"));
+btn.classList.add("active");
 };
 });
+
+// PRICE LOGIC (optional future upgrade ready)
+const layer=document.getElementById("layer");
 </script>
 
 </body>
