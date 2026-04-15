@@ -10,54 +10,50 @@
   <style>
     body {
       margin: 0;
-      background: #0b0b0b;
-      color: #fff;
       font-family: "Inter", sans-serif;
+      background: #fff3e6;
+      color: #2b2b2b;
     }
 
-    /* HEADER */
     header {
       text-align: center;
-      padding: 90px 20px 50px;
-      border-bottom: 1px solid #1f1f1f;
+      padding: 80px 20px 50px;
+      background: linear-gradient(135deg, #ffd7b3, #fff3e6);
+      border-bottom: 1px solid #f0c9a8;
     }
 
     header h1 {
-      font-size: 42px;
+      font-size: 44px;
       letter-spacing: 6px;
       margin: 0;
     }
 
     header p {
-      color: #aaa;
       margin-top: 10px;
-      font-size: 14px;
+      color: #555;
     }
 
     .btn {
       display: inline-block;
       margin-top: 20px;
       padding: 10px 18px;
-      border: 1px solid #fff;
-      color: #fff;
+      border: 1px solid #2b2b2b;
+      color: #2b2b2b;
       text-decoration: none;
       transition: 0.2s;
-      font-size: 14px;
     }
 
     .btn:hover {
-      background: #fff;
-      color: #000;
+      background: #2b2b2b;
+      color: white;
     }
 
-    /* CONTAINER */
     .container {
       max-width: 1100px;
       margin: auto;
       padding: 40px 20px;
     }
 
-    /* PRODUCT SECTION */
     .grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -65,14 +61,14 @@
     }
 
     .card {
-      background: #141414;
-      border: 1px solid #222;
+      background: white;
+      border: 1px solid #f0c9a8;
       padding: 20px;
+      border-radius: 12px;
     }
 
     h2 {
       margin-top: 0;
-      font-size: 18px;
       letter-spacing: 2px;
     }
 
@@ -80,19 +76,17 @@
       display: flex;
       justify-content: space-between;
       padding: 8px 0;
-      border-bottom: 1px solid #222;
-      font-size: 13px;
-      color: #bbb;
+      border-bottom: 1px solid #eee;
+      font-size: 14px;
     }
 
     .desc {
       margin-top: 15px;
-      color: #888;
+      color: #666;
       font-size: 13px;
       line-height: 1.5;
     }
 
-    /* GALLERY */
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -102,13 +96,13 @@
 
     .gallery img {
       width: 100%;
-      height: 180px;
+      height: 200px;
       object-fit: cover;
-      border: 1px solid #222;
-      background: #111;
+      border-radius: 12px;
+      border: 1px solid #f0c9a8;
+      background: #fff;
     }
 
-    /* MOBILE */
     @media (max-width: 768px) {
       .grid {
         grid-template-columns: 1fr;
@@ -119,73 +113,65 @@
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <h1>SVG DECALS</h1>
-    <p>Clean custom vinyl decals for your build</p>
+<header>
+  <h1>SVG DECALS</h1>
+  <p>Clean custom vinyl decals for your build</p>
 
-    <a class="btn" href="https://instagram.com/svg.mixchell3" target="_blank">
-      Order on Instagram
-    </a>
-  </header>
+  <a class="btn" href="https://instagram.com/svg.mixchell3" target="_blank">
+    Order on Instagram
+  </a>
+</header>
 
-  <div class="container">
+<div class="container">
 
-    <!-- PRODUCT -->
-    <div class="grid">
+  <div class="grid">
 
-      <div class="card">
-        <h2>Custom Tag Decals</h2>
+    <div class="card">
+      <h2>Custom Tags</h2>
 
-        <div class="line">
-          <span>Size</span>
-          <span>8 inches</span>
-        </div>
-
-        <div class="line">
-          <span>Price</span>
-          <span>2 Tags — $20</span>
-        </div>
-
-        <div class="line">
-          <span>Colors</span>
-          <span>Black / White / Chrome</span>
-        </div>
-
-        <div class="line">
-          <span>Use</span>
-          <span>Cars / Bikes / Windows</span>
-        </div>
-
-        <p class="desc">
-          Precision-cut vinyl decals made for a clean, professional finish. Weather-resistant and designed for both interior and exterior use.
-        </p>
-
-        <a class="btn" href="https://instagram.com/svg.mixchell3" target="_blank">
-          Order Now
-        </a>
+      <div class="line">
+        <span>Size</span>
+        <span>8 inches</span>
       </div>
 
-      <div class="card">
-        <h2>About</h2>
-        <p class="desc">
-          Minimal, clean vinyl work built for car culture and custom builds. Focused on precision cuts, clean edges, and a luxury aesthetic.
-        </p>
+      <div class="line">
+        <span>Price</span>
+        <span>2 Tags — $20</span>
       </div>
 
+      <div class="line">
+        <span>Colors</span>
+        <span>Black / White / Chrome</span>
+      </div>
+
+      <p class="desc">
+        Precision-cut vinyl decals designed for a clean, premium finish. Built for cars, bikes, and windows.
+      </p>
+
+      <a class="btn" href="https://instagram.com/svg.mixchell3" target="_blank">
+        Order Now
+      </a>
     </div>
 
-    <!-- GALLERY -->
-    <h2 style="margin-top:40px;">Work</h2>
-
-    <div class="gallery">
-      <img src="IMG1.PNG">
-      <img src="IMG2.PNG">
-      <img src="IMG3.PNG">
-      <img src="IMG4.PNG">
+    <div class="card">
+      <h2>About</h2>
+      <p class="desc">
+        Minimal decal brand focused on clean car culture designs, precision cutting, and luxury vinyl aesthetics.
+      </p>
     </div>
 
   </div>
+
+  <h2 style="margin-top:40px;">Gallery</h2>
+
+  <div class="gallery">
+    <img src="IMG1.png">
+    <img src="IMG2.png">
+    <img src="IMG3.png">
+    <img src="IMG4.png">
+  </div>
+
+</div>
 
 </body>
 </html>
