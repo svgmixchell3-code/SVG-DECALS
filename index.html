@@ -1,60 +1,64 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SVG DECALS</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
     body {
       margin: 0;
-      background: #0a0a0a;
-      color: white;
-      font-family: 'Montserrat', sans-serif;
+      background: #0b0b0b;
+      color: #fff;
+      font-family: "Inter", sans-serif;
     }
 
-    /* HERO */
-    .hero {
+    /* HEADER */
+    header {
       text-align: center;
-      padding: 90px 20px;
-      border-bottom: 1px solid #222;
+      padding: 90px 20px 50px;
+      border-bottom: 1px solid #1f1f1f;
     }
 
-    .hero h1 {
-      font-size: 44px;
+    header h1 {
+      font-size: 42px;
       letter-spacing: 6px;
       margin: 0;
     }
 
-    .hero p {
+    header p {
       color: #aaa;
       margin-top: 10px;
+      font-size: 14px;
     }
 
     .btn {
       display: inline-block;
       margin-top: 20px;
       padding: 10px 18px;
-      border: 1px solid white;
-      color: white;
+      border: 1px solid #fff;
+      color: #fff;
       text-decoration: none;
-      transition: 0.3s;
+      transition: 0.2s;
+      font-size: 14px;
     }
 
     .btn:hover {
-      background: white;
-      color: black;
+      background: #fff;
+      color: #000;
     }
 
-    /* LAYOUT */
+    /* CONTAINER */
     .container {
       max-width: 1100px;
       margin: auto;
       padding: 40px 20px;
     }
 
-    .grid-2 {
+    /* PRODUCT SECTION */
+    .grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 20px;
@@ -68,61 +72,45 @@
 
     h2 {
       margin-top: 0;
+      font-size: 18px;
       letter-spacing: 2px;
-      font-weight: 500;
     }
 
-    .product {
-      background: #111;
-      border: 1px solid #222;
-      padding: 20px;
-      margin-top: 20px;
-    }
-
-    .row {
+    .line {
       display: flex;
       justify-content: space-between;
-      border-bottom: 1px solid #222;
       padding: 8px 0;
-      font-size: 14px;
+      border-bottom: 1px solid #222;
+      font-size: 13px;
       color: #bbb;
     }
 
-    /* PORTFOLIO */
-    .portfolio {
+    .desc {
+      margin-top: 15px;
+      color: #888;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    /* GALLERY */
+    .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 12px;
       margin-top: 20px;
     }
 
-    .box {
+    .gallery img {
+      width: 100%;
       height: 180px;
-      background: #222;
-      border: 1px solid #333;
+      object-fit: cover;
+      border: 1px solid #222;
+      background: #111;
     }
 
-    /* IG GRID */
-    .ig-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 10px;
-      margin-top: 20px;
-    }
-
-    .ig-box {
-      height: 200px;
-      background: #1a1a1a;
-      border: 1px solid #333;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #666;
-      font-size: 12px;
-    }
-
+    /* MOBILE */
     @media (max-width: 768px) {
-      .grid-2 {
+      .grid {
         grid-template-columns: 1fr;
       }
     }
@@ -131,300 +119,70 @@
 
 <body>
 
-  <!-- HERO -->
-  <div class="hero">
+  <!-- HEADER -->
+  <header>
     <h1>SVG DECALS</h1>
-    <p>Precision-cut vinyl decals for your build</p>
+    <p>Clean custom vinyl decals for your build</p>
 
-    <a class="btn" href="https://instagram.com/SVG.MIXCHELL3" target="_blank">
+    <a class="btn" href="https://instagram.com/svg.mixchell3" target="_blank">
       Order on Instagram
     </a>
-  </div>
+  </header>
 
   <div class="container">
 
-    <!-- PRODUCT + ABOUT -->
-    <div class="grid-2">
+    <!-- PRODUCT -->
+    <div class="grid">
 
       <div class="card">
         <h2>Custom Tag Decals</h2>
 
-        <div class="product">
-
-          <div class="row">
-            <span>Size</span>
-            <span>8 inches</span>
-          </div>
-
-          <div class="row">
-            <span>Price</span>
-            <span>2 Tags — $20</span>
-          </div>
-
-          <div class="row">
-            <span>Colors</span>
-            <span>Black / White / Chrome</span>
-          </div>
-
-          <div class="row">
-            <span>Use</span>
-            <span>Cars / Bikes / Windows</span>
-          </div>
-
-          <p style="margin-top:15px;color:#aaa;font-size:13px;">
-            Clean-cut vinyl decals designed for a premium finish. Weather-resistant and made for interior or exterior use.
-          </p>
-
-          <a class="btn" href="https://instagram.com/SVG.MIXCHELL3" target="_blank">
-            Order Now
-          </a>
-
+        <div class="line">
+          <span>Size</span>
+          <span>8 inches</span>
         </div>
+
+        <div class="line">
+          <span>Price</span>
+          <span>2 Tags — $20</span>
+        </div>
+
+        <div class="line">
+          <span>Colors</span>
+          <span>Black / White / Chrome</span>
+        </div>
+
+        <div class="line">
+          <span>Use</span>
+          <span>Cars / Bikes / Windows</span>
+        </div>
+
+        <p class="desc">
+          Precision-cut vinyl decals made for a clean, professional finish. Weather-resistant and designed for both interior and exterior use.
+        </p>
+
+        <a class="btn" href="https://instagram.com/svg.mixchell3" target="_blank">
+          Order Now
+        </a>
       </div>
 
       <div class="card">
-        <h2>About SVG DECALS</h2>
-        <p style="color:#aaa;">
-          Minimal, clean vinyl work built for car culture and custom builds. Focused on precision cuts and a luxury aesthetic.
+        <h2>About</h2>
+        <p class="desc">
+          Minimal, clean vinyl work built for car culture and custom builds. Focused on precision cuts, clean edges, and a luxury aesthetic.
         </p>
       </div>
 
     </div>
 
-    <!-- PORTFOLIO -->
-    <h2 style="margin-top:40px;">Portfolio</h2>
+    <!-- GALLERY -->
+    <h2 style="margin-top:40px;">Work</h2>
 
-    <div class="portfolio">
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-    </div>
-
-    <!-- INSTAGRAM -->
-    <h2 style="margin-top:50px;">Instagram</h2>
-
-    <div class="ig-grid">
-      <div class="ig-box">Post 1</div>
-      <div class="ig-box">Post 2</div>
-      <div class="ig-box">Post 3</div>
-      <div class="ig-box">Post 4</div>
-    </div>
-
-  </div>
-
-</body>
-</html><!DOCTYPE html>
-<html>
-<head>
-  <title>SVG DECALS</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-
-  <style>
-    body {
-      margin: 0;
-      background: #0a0a0a;
-      color: white;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    /* HERO */
-    .hero {
-      text-align: center;
-      padding: 90px 20px;
-      border-bottom: 1px solid #222;
-    }
-
-    .hero h1 {
-      font-size: 44px;
-      letter-spacing: 6px;
-      margin: 0;
-    }
-
-    .hero p {
-      color: #aaa;
-      margin-top: 10px;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 18px;
-      border: 1px solid white;
-      color: white;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      background: white;
-      color: black;
-    }
-
-    /* LAYOUT */
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    .card {
-      background: #141414;
-      border: 1px solid #222;
-      padding: 20px;
-    }
-
-    h2 {
-      margin-top: 0;
-      letter-spacing: 2px;
-      font-weight: 500;
-    }
-
-    .product {
-      background: #111;
-      border: 1px solid #222;
-      padding: 20px;
-      margin-top: 20px;
-    }
-
-    .row {
-      display: flex;
-      justify-content: space-between;
-      border-bottom: 1px solid #222;
-      padding: 8px 0;
-      font-size: 14px;
-      color: #bbb;
-    }
-
-    /* PORTFOLIO */
-    .portfolio {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 12px;
-      margin-top: 20px;
-    }
-
-    .box {
-      height: 180px;
-      background: #222;
-      border: 1px solid #333;
-    }
-
-    /* IG GRID */
-    .ig-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 10px;
-      margin-top: 20px;
-    }
-
-    .ig-box {
-      height: 200px;
-      background: #1a1a1a;
-      border: 1px solid #333;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #666;
-      font-size: 12px;
-    }
-
-    @media (max-width: 768px) {
-      .grid-2 {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-  <!-- HERO -->
-  <div class="hero">
-    <h1>SVG DECALS</h1>
-    <p>Precision-cut vinyl decals for your build</p>
-
-    <a class="btn" href="https://instagram.com/SVG.MIXCHELL3" target="_blank">
-      Order on Instagram
-    </a>
-  </div>
-
-  <div class="container">
-
-    <!-- PRODUCT + ABOUT -->
-    <div class="grid-2">
-
-      <div class="card">
-        <h2>Custom Tag Decals</h2>
-
-        <div class="product">
-
-          <div class="row">
-            <span>Size</span>
-            <span>8 inches</span>
-          </div>
-
-          <div class="row">
-            <span>Price</span>
-            <span>2 Tags — $20</span>
-          </div>
-
-          <div class="row">
-            <span>Colors</span>
-            <span>Black / White / Chrome</span>
-          </div>
-
-          <div class="row">
-            <span>Use</span>
-            <span>Cars / Bikes / Windows</span>
-          </div>
-
-          <p style="margin-top:15px;color:#aaa;font-size:13px;">
-            Clean-cut vinyl decals designed for a premium finish. Weather-resistant and made for interior or exterior use.
-          </p>
-
-          <a class="btn" href="https://instagram.com/SVG.MIXCHELL3" target="_blank">
-            Order Now
-          </a>
-
-        </div>
-      </div>
-
-      <div class="card">
-        <h2>About SVG DECALS</h2>
-        <p style="color:#aaa;">
-          Minimal, clean vinyl work built for car culture and custom builds. Focused on precision cuts and a luxury aesthetic.
-        </p>
-      </div>
-
-    </div>
-
-    <!-- PORTFOLIO -->
-    <h2 style="margin-top:40px;">Portfolio</h2>
-
-    <div class="portfolio">
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-    </div>
-
-    <!-- INSTAGRAM -->
-    <h2 style="margin-top:50px;">Instagram</h2>
-
-    <div class="ig-grid">
-      <div class="ig-box">Post 1</div>
-      <div class="ig-box">Post 2</div>
-      <div class="ig-box">Post 3</div>
-      <div class="ig-box">Post 4</div>
+    <div class="gallery">
+      <img src="IMG1.PNG">
+      <img src="IMG2.PNG">
+      <img src="IMG3.PNG">
+      <img src="IMG4.PNG">
     </div>
 
   </div>
