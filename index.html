@@ -1,99 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SVG DECALS</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  font-family:"Inter",sans-serif;
+  background:#f6f7f9;
+  color:#1f1f1f;
+}
+
+/* HEADER */
+header{
+  text-align:center;
+  padding:90px 20px 50px;
+  background:#ffffff;
+  border-bottom:1px solid #e8e8e8;
+}
+
+h1{
+  margin:0;
+  font-size:44px;
+  letter-spacing:5px;
+}
+
+p{color:#666;}
+
+/* BUTTON */
+.btn{
+  display:inline-block;
+  margin-top:20px;
+  padding:10px 18px;
+  border:1px solid #ddd;
+  background:#fff;
+  color:#111;
+  text-decoration:none;
+  border-radius:10px;
+  transition:0.2s;
+}
+
+.btn:hover{
+  background:#111;
+  color:#fff;
+}
+
+/* LAYOUT */
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:40px 20px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+/* CARDS */
+.card{
+  background:#fff;
+  border:1px solid #e8e8e8;
+  padding:20px;
+  border-radius:16px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.04);
+}
+
+.line{
+  display:flex;
+  justify-content:space-between;
+  padding:8px 0;
+  border-bottom:1px solid #f0f0f0;
+  font-size:14px;
+}
+
+/* INPUTS */
+input,select,textarea{
+  width:100%;
+  padding:10px;
+  margin:6px 0;
+  border:1px solid #e8e8e8;
+  border-radius:10px;
+  background:#fff;
+}
+
+/* GALLERY */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:12px;
+  margin-top:20px;
+}
+
+.gallery img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  border-radius:12px;
+  border:1px solid #e8e8e8;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>SVG DECALS</h1>
+<p>Clean custom vinyl Instagram tags</p>
+<a class="btn" href="https://instagram.com/svg.mixchell3" target="_blank">Order on Instagram</a>
+</header>
+
+<div class="container">
+
+<div class="grid">
+
+<!-- INFO -->
 <div class="card">
-  <h2>Order</h2>
+<h2>Product Info</h2>
 
-  <form id="orderForm" action="https://formspree.io/f/YOUR_ID" method="POST" onsubmit="showThankYou()">
+<div class="line"><span>Size Range</span><span>5x2 – 8x2</span></div>
+<div class="line"><span>Base Price</span><span>$20</span></div>
+<div class="line"><span>Layered</span><span>+$5</span></div>
 
-    <input type="hidden" name="order_id" id="order_id">
-
-    <!-- NAME -->
-    <input name="name" placeholder="Name" required
-      style="width:100%;padding:10px;margin:6px 0;border:1px solid #f3c3a1;border-radius:10px;">
-
-    <!-- ZELLE -->
-    <input name="zelle_name" placeholder="Zelle Name" required
-      style="width:100%;padding:10px;margin:6px 0;border:1px solid #f3c3a1;border-radius:10px;">
-
-    <!-- SIZE (UPDATED COLUMN DROPDOWN) -->
-    <label>Size</label>
-    <select name="size"
-      style="width:100%;padding:10px;margin:6px 0;border:1px solid #f3c3a1;border-radius:10px;">
-
-      <option>5x2</option>
-      <option>6x2</option>
-      <option>7x2</option>
-      <option selected>8x2</option>
-
-    </select>
-
-    <!-- PRIMARY COLOR (COLUMN 1) -->
-    <label>Primary Color</label>
-    <select name="primary_color"
-      style="width:100%;padding:10px;margin:6px 0;border:1px solid #f3c3a1;border-radius:10px;">
-
-      <option>Black</option>
-      <option>White</option>
-      <option>Red</option>
-      <option>Blue</option>
-      <option>Green</option>
-      <option>Yellow</option>
-      <option>Orange</option>
-      <option>Purple</option>
-      <option>Silver Chrome</option>
-      <option>Black Chrome</option>
-      <option>Reflective Silver</option>
-      <option>Reflective Black</option>
-      <option>Holographic</option>
-
-    </select>
-
-    <!-- LAYER TOGGLE -->
-    <label>Layered Design (+$5)</label>
-    <select id="layer" name="layer"
-      style="width:100%;padding:10px;margin:6px 0;border:1px solid #f3c3a1;border-radius:10px;">
-
-      <option value="0">No Layer</option>
-      <option value="5">Yes (+$5 Secondary Color)</option>
-
-    </select>
-
-    <!-- SECONDARY COLOR (ONLY USED IF LAYERED) -->
-    <label>Secondary Color (Top Layer)</label>
-    <select name="secondary_color"
-      style="width:100%;padding:10px;margin:6px 0;border:1px solid #f3c3a1;border-radius:10px;">
-
-      <option>None</option>
-      <option>Black</option>
-      <option>White</option>
-      <option>Red</option>
-      <option>Blue</option>
-      <option>Green</option>
-      <option>Yellow</option>
-      <option>Orange</option>
-      <option>Purple</option>
-      <option>Silver Chrome</option>
-      <option>Black Chrome</option>
-      <option>Reflective Silver</option>
-      <option>Reflective Black</option>
-      <option>Holographic</option>
-
-    </select>
-
-    <!-- NOTES -->
-    <textarea name="notes" placeholder="Car / placement / details"
-      style="width:100%;padding:10px;margin:6px 0;height:80px;border:1px solid #f3c3a1;border-radius:10px;"></textarea>
-
-    <!-- PRICE -->
-    <p>
-      Order #: <span id="orderShow"></span><br>
-      Total: $<span id="total">20</span>
-    </p>
-
-    <p style="font-size:12px;color:#7a5a4a;">
-      Send Zelle to: SVG.mixchell3@gmail.com<br>
-      Then DM proof + order #
-    </p>
-
-    <button class="btn" type="submit">Submit Order</button>
-
-  </form>
+<p style="font-size:13px;color:#666;">
+Premium vinyl Instagram tags for clean automotive builds and displays.
+</p>
 </div>
+
+<!-- ORDER -->
+<div class="card">
+<h2>Order</h2>
+
+<form id="orderForm" action="https://formspree.io/f/YOUR_ID" method="POST" onsubmit="showThankYou()">
+
+<input type="hidden" name="order_id" id="order_id">
+
+<input name="name" placeholder="Name" required>
+
+<input name="zelle_name" placeholder="Zelle Name" required>
+
+<!-- SIZE -->
+<label>Size</label>
+<select name="size" id="size">
+<option value="20">5x2</option>
+<option value="20">6x2</option>
+<option value="20">7x2</option>
+<option value="20" selected>8x2</option>
+</select>
+
+<!-- PRIMARY -->
+<label>Primary Color</label>
+<select name="primary_color">
+<option>Black</option><option>White</option><option>Red</option>
+<option>Blue</option><option>Green</option><option>Yellow</option>
+<option>Orange</option><option>Purple</option>
+<option>Silver Chrome</option><option>Black Chrome</option>
+<option>Reflective Silver</option><option>Reflective Black</option>
+<option>Holographic</option>
+</select>
+
+<!-- LAYER -->
+<label>Layered (+$5)</label>
+<select id="layer" name="layer">
+<option value="0">No</option>
+<option value="5">Yes</option>
+</select>
+
+<!-- SECONDARY -->
+<label>Secondary Color</label>
+<select name="secondary_color">
+<option>None</option>
+<option>Black</option><option>White</option><option>Red</option>
+<option>Blue</option><option>Green</option><option>Yellow</option>
+<option>Orange</option><option>Purple</option>
+<option>Silver Chrome</option><option>Black Chrome</option>
+<option>Reflective Silver</option><option>Reflective Black</option>
+<option>Holographic</option>
+</select>
+
+<textarea name="notes" placeholder="Details / placement"></textarea>
+
+<p>
+Order #: <span id="orderShow"></span><br>
+Total: $<span id="total">20</span>
+</p>
+
+<p style="font-size:12px;color:#666;">
+Send Zelle to: SVG.mixchell3@gmail.com<br>
+Then DM proof with order number.
+</p>
+
+<button class="btn" type="submit">Submit Order</button>
+
+</form>
+</div>
+
+</div>
+
+<!-- GALLERY -->
+<h2 style="margin-top:40px;">Gallery</h2>
+
+<div class="gallery">
+<img src="IMG1.png">
+<img src="IMG2.png">
+<img src="IMG3.png">
+<img src="IMG4.png">
+</div>
+
+<!-- CONFIRMATION -->
+<div class="card" id="thankYou" style="display:none;margin-top:20px;">
+<h2>Order Confirmed ✅</h2>
+<p>
+Order #: <span id="finalOrder"></span><br>
+We will contact you after Zelle payment confirmation.
+</p>
+</div>
+
+</div>
+
+<script>
+const layer=document.getElementById("layer");
+const total=document.getElementById("total");
+
+function updatePrice(){
+let base=20;
+total.innerText=base+parseInt(layer.value);
+}
+layer.addEventListener("change",updatePrice);
+updatePrice();
+
+const orderId=Math.floor(1000+Math.random()*9000);
+document.getElementById("order_id").value=orderId;
+document.getElementById("orderShow").innerText="#"+orderId;
+
+function showThankYou(){
+document.getElementById("thankYou").style.display="block";
+document.getElementById("finalOrder").innerText="#"+orderId;
+document.getElementById("orderForm").style.display="none";
+}
+</script>
+
+</body>
+</html>
