@@ -1,13 +1,188 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head>
   <title>SVG DECALS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Clean modern font (DaFont-style alternative) -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      background: #0a0a0a;
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 90px 20px;
+      border-bottom: 1px solid #222;
+    }
+
+    .hero h1 {
+      font-size: 44px;
+      letter-spacing: 6px;
+      margin: 0;
+    }
+
+    .hero p {
+      color: #aaa;
+      margin-top: 10px;
+    }
+
+    /* LAYOUT */
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .card {
+      background: #141414;
+      border: 1px solid #222;
+      padding: 20px;
+    }
+
+    h2 {
+      margin-top: 0;
+      letter-spacing: 2px;
+      font-weight: 500;
+    }
+
+    /* PRODUCT CARD */
+    .product {
+      background: #111;
+      border: 1px solid #222;
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #222;
+      padding: 8px 0;
+      font-size: 14px;
+      color: #bbb;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 18px;
+      border: 1px solid white;
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: white;
+      color: black;
+    }
+
+    /* PORTFOLIO */
+    .portfolio {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .box {
+      height: 180px;
+      background: #222;
+      border: 1px solid #333;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
-<body style="background:black;color:white;text-align:center;padding-top:100px;font-family:Arial;">
-  <h1>SVG DECALS</h1>
-  <p>Precision-cut vinyl decals</p>
-  <p>2 Tags — $20</p>
-  <p>Shipped or Local Pickup</p>
+<body>
+
+  <!-- HERO -->
+  <div class="hero">
+    <h1>SVG DECALS</h1>
+    <p>Precision-cut vinyl decals for your build</p>
+  </div>
+
+  <div class="container">
+
+    <!-- TOP GRID -->
+    <div class="grid-2">
+
+      <!-- PRODUCT -->
+      <div class="card">
+        <h2>Custom Tag Decals</h2>
+
+        <div class="product">
+
+          <div class="row">
+            <span>Standard Size</span>
+            <span>8 inches</span>
+          </div>
+
+          <div class="row">
+            <span>Price</span>
+            <span>2 Tags — $20</span>
+          </div>
+
+          <div class="row">
+            <span>Finish Colors</span>
+            <span>Black / White / Chrome</span>
+          </div>
+
+          <div class="row">
+            <span>Use</span>
+            <span>Cars / Bikes / Windows</span>
+          </div>
+
+          <p style="margin-top:15px;color:#aaa;font-size:13px;">
+            Clean-cut vinyl decals designed for a flush, professional look. Weather-resistant and built for exterior or interior placement.
+          </p>
+
+          <a class="btn" href="#">Order on Instagram</a>
+        </div>
+      </div>
+
+      <!-- ABOUT -->
+      <div class="card">
+        <h2>About SVG DECALS</h2>
+        <p style="color:#aaa;">
+          Minimal, clean vinyl work made for car culture and custom builds. Focused on precision cuts and a premium finish.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- PORTFOLIO -->
+    <h2 style="margin-top:40px;">Portfolio</h2>
+
+    <div class="portfolio">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+
+  </div>
+
 </body>
-</html>
+</html
