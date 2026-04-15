@@ -3,48 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SVG DECALS | Luxury Vinyl Studio</title>
+<title>SVG DECALS | Custom Vinyl Studio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
 
+/* =======================
+   BASE
+======================= */
 body{
   margin:0;
   font-family:"Inter",sans-serif;
   color:#eef3f8;
 
-  /* LUXURY DARK */
   background:
-    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.06), transparent 40%),
-    radial-gradient(circle at 80% 30%, rgba(120,130,150,0.08), transparent 45%),
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.05), transparent 45%),
+    radial-gradient(circle at 80% 40%, rgba(120,140,170,0.07), transparent 50%),
     linear-gradient(180deg, #07090d, #0b0f14);
 }
 
-/* CLEAN GRID */
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-  background-size:80px 80px;
-  opacity:0.12;
-  pointer-events:none;
-}
-
-/* HEADER */
+/* =======================
+   HEADER
+======================= */
 .hero{
   text-align:center;
-  padding:80px 20px 10px;
+  padding:70px 20px 10px;
 }
 
 .hero h1{
-  font-size:46px;
-  letter-spacing:4px;
+  font-size:48px;
   margin:0;
-  color:#f5f7fa;
+  letter-spacing:4px;
 }
 
 .hero p{
@@ -52,73 +42,92 @@ body::before{
   font-size:14px;
 }
 
-/* LAYOUT */
+/* =======================
+   LAYOUT
+======================= */
 .container{
-  max-width:880px;
+  max-width:1000px;
   margin:auto;
   padding:20px;
+  display:flex;
+  gap:20px;
 }
 
-/* CARD */
+/* =======================
+   FORM CARD
+======================= */
 .card{
-  background:rgba(18,22,28,0.85);
-  border:1px solid rgba(255,255,255,0.06);
-  border-radius:16px;
+  flex:1;
+  background:#111826;
+  border:1px solid #1e2a3a;
+  border-radius:14px;
   padding:18px;
-  backdrop-filter:blur(12px);
 }
 
-/* INPUTS */
+/* =======================
+   INPUTS
+======================= */
 input,select,textarea{
   width:100%;
   padding:12px;
   margin:8px 0;
   border-radius:10px;
-  border:1px solid rgba(255,255,255,0.08);
+  border:1px solid #24344a;
   background:#0b0f14;
-  color:#fff;
+  color:white;
 }
 
-/* BUTTON */
+/* =======================
+   BUTTON
+======================= */
 .btn{
   width:100%;
   padding:12px;
   border-radius:10px;
-  border:1px solid rgba(255,255,255,0.2);
+  border:1px solid #3aa0ff;
   background:#0b0f14;
-  color:#e8edf2;
+  color:#3aa0ff;
   cursor:pointer;
 }
 
 .btn:hover{
-  background:#1a222c;
+  background:#3aa0ff;
+  color:#0b0f14;
 }
 
-/* PRICE */
+/* =======================
+   PRICE
+======================= */
 .priceBox{
   background:#0b0f14;
-  border:1px solid rgba(255,255,255,0.08);
+  border:1px solid #24344a;
   padding:10px;
   border-radius:10px;
   font-size:14px;
   margin:10px 0;
 }
 
-/* PREVIEW */
+/* =======================
+   PREVIEW PANEL
+======================= */
 .preview{
-  height:220px;
+  flex:1;
+  height:420px;
   display:flex;
   align-items:center;
   justify-content:center;
   font-size:42px;
   font-weight:700;
-  border-radius:12px;
+  border-radius:14px;
   background:#0b0f14;
-  border:1px solid rgba(255,255,255,0.08);
-  margin-top:15px;
+  border:1px solid #1e2a3a;
+  position:sticky;
+  top:20px;
 }
 
-/* GALLERY */
+/* =======================
+   GALLERY
+======================= */
 .gallery{
   margin-top:25px;
   display:grid;
@@ -131,14 +140,29 @@ input,select,textarea{
   height:180px;
   object-fit:cover;
   border-radius:10px;
-  border:1px solid rgba(255,255,255,0.08);
+  border:1px solid #1e2a3a;
 }
 
-/* INFO */
+/* =======================
+   INFO
+======================= */
 .info{
   font-size:13px;
   color:#aab4c0;
   margin-top:10px;
+}
+
+/* =======================
+   MOBILE
+======================= */
+@media (max-width: 900px){
+  .container{
+    flex-direction:column;
+  }
+  .preview{
+    position:relative;
+    height:240px;
+  }
 }
 
 </style>
@@ -148,11 +172,12 @@ input,select,textarea{
 
 <div class="hero">
 <h1>SVG DECALS</h1>
-<p>High-quality custom vinyl decals made to order</p>
+<p>Custom high-quality vinyl decals made to order</p>
 </div>
 
 <div class="container">
 
+<!-- FORM -->
 <div class="card">
 
 <form id="orderForm" action="https://formspree.io/f/xzdydgap" method="POST">
@@ -164,24 +189,35 @@ input,select,textarea{
 <!-- FONT -->
 <label>Font Style</label>
 <select id="fontSelect" name="font">
+
 <option>Inter</option>
 <option>Arial</option>
-<option>Impact</option>
+<option>Helvetica</option>
 <option>Verdana</option>
-<option>Courier New</option>
-<option>Georgia</option>
-<option>Futura</option>
 <option>Tahoma</option>
+<option>Impact</option>
+<option>Arial Black</option>
+<option>Franklin Gothic Medium</option>
+<option>Bebas Neue</option>
+<option>Courier New</option>
 <option>Lucida Console</option>
+<option>Georgia</option>
+<option>Palatino</option>
+<option>Brush Script MT</option>
+<option>Futura</option>
+<option>Gill Sans</option>
+<option>Optima</option>
+<option>Trebuchet MS</option>
+
 </select>
 
-<!-- SIZE (2 TAGS $20) -->
-<label>Size (2 tags = $20 total base price)</label>
+<!-- SIZE -->
+<label>Size</label>
 <select id="size" name="size">
-<option value="10">5 inch</option>
-<option value="10">6 inch</option>
-<option value="10">7 inch</option>
-<option value="10">8 inch</option>
+<option value="20">5 inch</option>
+<option value="22">6 inch</option>
+<option value="24">7 inch</option>
+<option value="26">8 inch</option>
 </select>
 
 <!-- COLOR -->
@@ -197,14 +233,14 @@ input,select,textarea{
 </select>
 
 <!-- LAYER -->
-<label>Layer Option (+$5 if selected)</label>
+<label>Layer Option (+$5)</label>
 <select id="layer" name="layer">
 <option value="0">No</option>
 <option value="5">Yes</option>
 </select>
 
 <!-- LAYER COLOR -->
-<label>Layer Color (if layered)</label>
+<label>Layer Color</label>
 <select name="layer_color">
 <option>White</option>
 <option>Black</option>
@@ -219,7 +255,7 @@ input,select,textarea{
 
 <input type="hidden" id="orderID" name="order_id">
 
-<div class="priceBox" id="priceBox">Estimated Price: $10</div>
+<div class="priceBox" id="priceBox">Total: $20</div>
 
 <button class="btn" type="submit">Submit Order</button>
 
@@ -228,7 +264,7 @@ input,select,textarea{
 <div class="info">
 Zelle: <b>SVG DECALS</b><br>
 Email: <b>SVG.mixchell3@gmail.com</b><br>
-2 tags = $20 base pricing
+Orders are custom made after payment confirmation
 </div>
 
 </div>
@@ -236,22 +272,25 @@ Email: <b>SVG.mixchell3@gmail.com</b><br>
 <!-- PREVIEW -->
 <div class="preview" id="preview">LIVE PREVIEW</div>
 
-<!-- IMAGES -->
+</div>
+
+<!-- GALLERY -->
+<div class="container">
 <div class="gallery">
 <img src="IMG1.png">
 <img src="IMG2.png">
 <img src="IMG3.png">
 <img src="IMG4.png">
 </div>
-
 </div>
 
 <script>
 
+/* ORDER ID */
 const orderID = "SVG-" + Math.floor(1000 + Math.random() * 9000);
 document.getElementById("orderID").value = orderID;
 
-/* preview */
+/* PREVIEW */
 const textInput = document.getElementById("textInput");
 const fontSelect = document.getElementById("fontSelect");
 const preview = document.getElementById("preview");
@@ -264,16 +303,17 @@ function updatePreview(){
 textInput.addEventListener("input", updatePreview);
 fontSelect.addEventListener("change", updatePreview);
 
-/* pricing */
+/* PRICE */
+const size = document.getElementById("size");
 const layer = document.getElementById("layer");
 const priceBox = document.getElementById("priceBox");
 
 function updatePrice(){
-  let price = 20; // 2 tags base price
-  price += parseInt(layer.value);
-  priceBox.innerText = "Estimated Price: $" + price;
+  let price = parseInt(size.value) + parseInt(layer.value);
+  priceBox.innerText = "Total: $" + price;
 }
 
+size.addEventListener("change", updatePrice);
 layer.addEventListener("change", updatePrice);
 
 </script>
