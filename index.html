@@ -3,17 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SVG DECALS</title>
+<title>SVG DECALS | Studio Store</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+html{scroll-behavior:smooth;}
+
 body{
   margin:0;
   font-family:"Inter",sans-serif;
-  background:#0a0d12;
-  color:#eaf0f6;
-  scroll-behavior:smooth;
+  background:#06080d;
+  color:#eef3fb;
 }
 
 /* NAV */
@@ -21,20 +22,20 @@ nav{
   position:fixed;
   top:0;
   width:100%;
-  background:#0a0d12;
-  border-bottom:1px solid #1e2635;
   display:flex;
   justify-content:center;
-  gap:25px;
+  gap:26px;
   padding:14px;
+  background:rgba(10,12,18,0.8);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid #1c2333;
   z-index:999;
 }
 
 nav a{
-  color:#cfd8e3;
+  font-size:13px;
+  color:#cfd8e4;
   text-decoration:none;
-  font-weight:500;
-  font-size:14px;
 }
 
 nav a:hover{
@@ -43,92 +44,68 @@ nav a:hover{
 
 /* HERO */
 .hero{
+  height:85vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
   text-align:center;
-  padding:140px 20px 80px;
-  background:linear-gradient(135deg,#121826,#0a0d12);
+  background:radial-gradient(circle at top,#121a2d,#06080d);
 }
 
 .hero h1{
-  font-size:60px;
-  letter-spacing:8px;
+  font-size:74px;
+  letter-spacing:12px;
   margin:0;
 }
 
 .hero p{
-  color:#aab4c2;
-  margin-top:10px;
-}
-
-.btn{
-  display:inline-block;
-  margin-top:20px;
-  padding:12px 22px;
-  border:1px solid #5aa7ff;
-  color:#5aa7ff;
-  border-radius:12px;
-  text-decoration:none;
-}
-
-.btn:hover{
-  background:#5aa7ff;
-  color:#0a0d12;
+  color:#aab6c7;
+  max-width:600px;
 }
 
 /* SECTIONS */
 .section{
-  max-width:1200px;
+  max-width:1150px;
   margin:auto;
-  padding:70px 20px;
+  padding:90px 20px;
 }
 
 .title{
-  font-size:28px;
+  font-size:34px;
   margin-bottom:20px;
-  letter-spacing:2px;
 }
 
-/* GRID */
+/* PRODUCT GRID */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:18px;
 }
 
-/* CARD */
-.card{
-  background:#121826;
-  border:1px solid #1e2635;
-  border-radius:16px;
-  padding:18px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.35);
-}
-
 /* PRODUCT CARD */
-.product{
-  border:1px solid #1e2635;
-  border-radius:14px;
-  padding:15px;
-  background:#0a0d12;
+.card{
+  background:#0d1320;
+  border:1px solid #1c2333;
+  border-radius:18px;
+  padding:20px;
+  transition:0.25s;
 }
 
-.product h3{
-  margin:0;
-}
-
-.muted{
-  color:#aab4c2;
-  font-size:13px;
+.card:hover{
+  transform:translateY(-8px);
+  border-color:#5aa7ff;
 }
 
 /* FORM */
 input,select{
   width:100%;
-  padding:10px;
-  margin:6px 0;
+  padding:12px;
+  margin:7px 0;
   border-radius:10px;
-  border:1px solid #27324a;
-  background:#0a0d12;
-  color:#eaf0f6;
+  border:1px solid #26324a;
+  background:#06080d;
+  color:#eef3fb;
 }
 
 /* SIZE */
@@ -140,10 +117,11 @@ input,select{
 
 .size-option{
   text-align:center;
-  padding:10px;
-  border:1px solid #27324a;
+  padding:11px;
   border-radius:10px;
+  border:1px solid #26324a;
   cursor:pointer;
+  font-size:13px;
 }
 
 .size-option.active{
@@ -154,78 +132,83 @@ input,select{
 /* GALLERY */
 .gallery{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
   gap:14px;
 }
 
 .gallery img{
   width:100%;
-  height:210px;
+  height:220px;
   object-fit:cover;
-  border-radius:12px;
-  border:1px solid #27324a;
+  border-radius:14px;
+  border:1px solid #1c2333;
 }
 
-/* MOBILE */
-@media(max-width:768px){
-  .hero h1{font-size:42px;}
+/* BUTTON */
+.btn{
+  padding:12px 22px;
+  border-radius:12px;
+  border:1px solid #5aa7ff;
+  color:#5aa7ff;
+  background:none;
+  cursor:pointer;
+}
+
+.btn:hover{
+  background:#5aa7ff;
+  color:#06080d;
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
 <nav>
-<a href="#stickers">STICKERS</a>
-<a href="#banners">BANNERS</a>
-<a href="#decals">DECALS</a>
+<a href="#shop">SHOP</a>
+<a href="#build">BUILD</a>
+<a href="#gallery">GALLERY</a>
 <a href="#tags">TAGS</a>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
 <h1>SVG DECALS</h1>
-<p>Premium weatherproof vinyl built for clean automotive setups</p>
-<a class="btn" href="https://instagram.com/svg.mixchell3" target="_blank">Order on Instagram</a>
+<p>Premium vinyl studio for automotive culture — built for clean installs & long durability</p>
 </div>
 
-<!-- STICKERS -->
-<div id="stickers" class="section">
-<div class="title">STICKERS</div>
+<!-- SHOP -->
+<div id="shop" class="section">
+<div class="title">SHOP PRODUCTS</div>
 
 <div class="grid">
-<div class="product">
+<div class="card">
 <h3>Custom Stickers</h3>
-<p class="muted">Weatherproof vinyl stickers for clean branding.</p>
-</div>
-</div>
+<p>Weatherproof vinyl branding stickers.</p>
 </div>
 
-<!-- BANNERS -->
-<div id="banners" class="section">
-<div class="title">BANNERS</div>
+<div class="card">
+<h3>Vinyl Banners</h3>
+<p>Car meets, shops, and event banners.</p>
+</div>
 
-<div class="grid">
-<div class="product">
-<h3>Custom Banners</h3>
-<p class="muted">Shop banners, car meet banners, event displays.</p>
+<div class="card">
+<h3>Instagram Tags</h3>
+<p>Clean build branding decals.</p>
 </div>
 </div>
 </div>
-
-<!-- DECALS (MAIN ORDER BUILDER) -->
-<div id="decals" class="section">
-<div class="title">DECALS BUILDER</div>
-
-<div class="grid">
 
 <!-- BUILDER -->
-<div class="card">
-<h3>Customize Your Decal</h3>
+<div id="build" class="section">
+<div class="title">BUILD YOUR DECAL</div>
 
-<input placeholder="Name">
-<input placeholder="Zelle Name">
+<div class="grid">
+
+<div class="card">
+
+<form action="https://formspree.io/f/xzdydgap" method="POST">
+
+<input name="name" placeholder="Full Name" required>
+<input name="zelle" placeholder="Zelle Name" required>
 
 <div class="size-grid">
 <div class="size-option active">5x2</div>
@@ -235,58 +218,36 @@ input,select{
 </div>
 
 <label>Primary Color</label>
-<select>
+<select name="primary">
 <option>Black</option><option>White</option><option>Red</option>
-<option>Blue</option><option>Chrome</option><option>Holographic</option>
+<option>Chrome</option><option>Holographic</option>
 </select>
 
 <label>Layer (+$5)</label>
-<select>
-<option>No</option><option>Yes</option>
+<select name="layer" id="layer">
+<option value="0">No</option>
+<option value="5">Yes</option>
 </select>
 
 <label>Secondary Color</label>
-<select>
+<select name="secondary">
 <option>None</option><option>Black</option><option>White</option>
 <option>Chrome</option><option>Holographic</option>
 </select>
 
-<p class="muted">
-Send Zelle: SVG.mixchell3@gmail.com
-</p>
-
-<form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
 <button class="btn" type="submit">Submit Order</button>
+
 </form>
 
-</div>
+<p>Send payment via Zelle: SVG.mixchell3@gmail.com</p>
 
-<!-- INFO -->
-<div class="card">
-<h3>Why Us</h3>
-<p class="muted">
-Weatherproof vinyl decals built for durability, clean installs, and car culture aesthetics.
-</p>
 </div>
 
 </div>
-</div>
-
-<!-- TAGS -->
-<div id="tags" class="section">
-<div class="title">TAGS</div>
-
-<div class="grid">
-<div class="product">
-<h3>Instagram Tags</h3>
-<p class="muted">Custom branded tags for builds and socials.</p>
-</div>
-</div>
-
 </div>
 
 <!-- GALLERY -->
-<div class="section">
+<div id="gallery" class="section">
 <div class="title">GALLERY</div>
 
 <div class="gallery">
@@ -299,13 +260,11 @@ Weatherproof vinyl decals built for durability, clean installs, and car culture 
 </div>
 
 <script>
-// SIZE SELECT
-const sizes=document.querySelectorAll(".size-option");
-sizes.forEach(s=>{
-s.addEventListener("click",()=>{
-sizes.forEach(x=>x.classList.remove("active"));
-s.classList.add("active");
-});
+document.querySelectorAll(".size-option").forEach(b=>{
+b.onclick=()=>{
+document.querySelectorAll(".size-option").forEach(x=>x.classList.remove("active"));
+b.classList.add("active");
+};
 });
 </script>
 
