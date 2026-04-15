@@ -5,48 +5,50 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SVG DECALS</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
 
 <style>
 body{
   margin:0;
   font-family:"Inter",sans-serif;
-  background:#f6f7f9;
-  color:#1f1f1f;
+  background:#0b0d10;
+  color:#e9eef5;
 }
 
 /* HEADER */
 header{
   text-align:center;
-  padding:90px 20px 50px;
-  background:#ffffff;
-  border-bottom:1px solid #e8e8e8;
+  padding:90px 20px 60px;
+  background:linear-gradient(135deg,#121824,#0b0d10);
+  border-bottom:1px solid #1f2633;
 }
 
 h1{
+  font-size:48px;
+  letter-spacing:6px;
   margin:0;
-  font-size:44px;
-  letter-spacing:5px;
 }
 
-p{color:#666;}
+p{
+  color:#a9b4c2;
+}
 
 /* BUTTON */
 .btn{
   display:inline-block;
   margin-top:20px;
-  padding:10px 18px;
-  border:1px solid #ddd;
-  background:#fff;
-  color:#111;
+  padding:11px 20px;
+  border:1px solid #5aa7ff;
+  color:#5aa7ff;
   text-decoration:none;
-  border-radius:10px;
+  border-radius:12px;
   transition:0.2s;
+  font-weight:500;
 }
 
 .btn:hover{
-  background:#111;
-  color:#fff;
+  background:#5aa7ff;
+  color:#0b0d10;
 }
 
 /* LAYOUT */
@@ -62,31 +64,60 @@ p{color:#666;}
   gap:20px;
 }
 
-/* CARDS */
+/* CARD */
 .card{
-  background:#fff;
-  border:1px solid #e8e8e8;
-  padding:20px;
+  background:#121824;
+  border:1px solid #202838;
   border-radius:16px;
-  box-shadow:0 6px 18px rgba(0,0,0,0.04);
+  padding:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.35);
 }
 
 .line{
   display:flex;
   justify-content:space-between;
   padding:8px 0;
-  border-bottom:1px solid #f0f0f0;
+  border-bottom:1px solid #1f2633;
   font-size:14px;
+  color:#c9d3e1;
 }
 
 /* INPUTS */
-input,select,textarea{
+input,select{
   width:100%;
   padding:10px;
   margin:6px 0;
-  border:1px solid #e8e8e8;
   border-radius:10px;
-  background:#fff;
+  border:1px solid #263041;
+  background:#0b0d10;
+  color:#e9eef5;
+}
+
+/* SIZE SELECTOR */
+.size-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+  margin:10px 0;
+}
+
+.size-option{
+  text-align:center;
+  padding:12px;
+  border-radius:12px;
+  border:1px solid #263041;
+  cursor:pointer;
+  background:#0b0d10;
+  transition:0.2s;
+}
+
+.size-option:hover{
+  border-color:#5aa7ff;
+}
+
+.size-option.active{
+  border-color:#5aa7ff;
+  color:#5aa7ff;
 }
 
 /* GALLERY */
@@ -102,7 +133,7 @@ input,select,textarea{
   height:200px;
   object-fit:cover;
   border-radius:12px;
-  border:1px solid #e8e8e8;
+  border:1px solid #263041;
 }
 
 /* MOBILE */
@@ -116,7 +147,7 @@ input,select,textarea{
 
 <header>
 <h1>SVG DECALS</h1>
-<p>Clean custom vinyl Instagram tags</p>
+<p>Weatherproof vinyl decals built for clean car & bike builds</p>
 <a class="btn" href="https://instagram.com/svg.mixchell3" target="_blank">Order on Instagram</a>
 </header>
 
@@ -128,20 +159,20 @@ input,select,textarea{
 <div class="card">
 <h2>Product Info</h2>
 
-<div class="line"><span>Size Range</span><span>5x2 – 8x2</span></div>
-<div class="line"><span>Base Price</span><span>$20</span></div>
-<div class="line"><span>Layered</span><span>+$5</span></div>
+<div class="line"><span>Material</span><span>Weatherproof Vinyl</span></div>
+<div class="line"><span>Use</span><span>Cars • Bikes • Windows</span></div>
+<div class="line"><span>Finish</span><span>Gloss / Chrome / Holo</span></div>
 
-<p style="font-size:13px;color:#666;">
-Premium vinyl Instagram tags for clean automotive builds and displays.
+<p style="color:#a9b4c2;font-size:13px;">
+Built to last outdoors — UV resistant, water resistant, and made for clean installs on any surface.
 </p>
 </div>
 
 <!-- ORDER -->
 <div class="card">
-<h2>Order</h2>
+<h2>Customize Order</h2>
 
-<form id="orderForm" action="https://formspree.io/f/YOUR_ID" method="POST" onsubmit="showThankYou()">
+<form id="orderForm" onsubmit="showThankYou(); return false;">
 
 <input type="hidden" name="order_id" id="order_id">
 
@@ -151,12 +182,13 @@ Premium vinyl Instagram tags for clean automotive builds and displays.
 
 <!-- SIZE -->
 <label>Size</label>
-<select name="size" id="size">
-<option value="20">5x2</option>
-<option value="20">6x2</option>
-<option value="20">7x2</option>
-<option value="20" selected>8x2</option>
-</select>
+<div class="size-grid">
+  <div class="size-option active" data-size="5x2">5x2</div>
+  <div class="size-option" data-size="6x2">6x2</div>
+  <div class="size-option" data-size="7x2">7x2</div>
+  <div class="size-option" data-size="8x2">8x2</div>
+</div>
+<input type="hidden" name="size" id="sizeInput" value="5x2">
 
 <!-- PRIMARY -->
 <label>Primary Color</label>
@@ -170,9 +202,9 @@ Premium vinyl Instagram tags for clean automotive builds and displays.
 </select>
 
 <!-- LAYER -->
-<label>Layered (+$5)</label>
+<label>Layer (+$5)</label>
 <select id="layer" name="layer">
-<option value="0">No</option>
+<option value="0">No Layer</option>
 <option value="5">Yes</option>
 </select>
 
@@ -188,16 +220,14 @@ Premium vinyl Instagram tags for clean automotive builds and displays.
 <option>Holographic</option>
 </select>
 
-<textarea name="notes" placeholder="Details / placement"></textarea>
-
 <p>
 Order #: <span id="orderShow"></span><br>
 Total: $<span id="total">20</span>
 </p>
 
-<p style="font-size:12px;color:#666;">
+<p style="font-size:12px;color:#a9b4c2;">
 Send Zelle to: SVG.mixchell3@gmail.com<br>
-Then DM proof with order number.
+Then DM proof + order number
 </p>
 
 <button class="btn" type="submit">Submit Order</button>
@@ -217,18 +247,28 @@ Then DM proof with order number.
 <img src="IMG4.png">
 </div>
 
-<!-- CONFIRMATION -->
+<!-- CONFIRM -->
 <div class="card" id="thankYou" style="display:none;margin-top:20px;">
 <h2>Order Confirmed ✅</h2>
-<p>
-Order #: <span id="finalOrder"></span><br>
-We will contact you after Zelle payment confirmation.
-</p>
+<p>Order #: <span id="finalOrder"></span></p>
 </div>
 
 </div>
 
 <script>
+// SIZE SELECTOR
+const sizeOptions=document.querySelectorAll(".size-option");
+const sizeInput=document.getElementById("sizeInput");
+
+sizeOptions.forEach(opt=>{
+opt.addEventListener("click",()=>{
+sizeOptions.forEach(o=>o.classList.remove("active"));
+opt.classList.add("active");
+sizeInput.value=opt.dataset.size;
+});
+});
+
+// PRICE
 const layer=document.getElementById("layer");
 const total=document.getElementById("total");
 
@@ -239,10 +279,12 @@ total.innerText=base+parseInt(layer.value);
 layer.addEventListener("change",updatePrice);
 updatePrice();
 
+// ORDER ID
 const orderId=Math.floor(1000+Math.random()*9000);
 document.getElementById("order_id").value=orderId;
 document.getElementById("orderShow").innerText="#"+orderId;
 
+// CONFIRM
 function showThankYou(){
 document.getElementById("thankYou").style.display="block";
 document.getElementById("finalOrder").innerText="#"+orderId;
