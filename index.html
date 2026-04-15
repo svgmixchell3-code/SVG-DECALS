@@ -1,177 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SVG DECALS</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SVG DECALS</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: "Inter", sans-serif;
-      background: #fff3e6;
-      color: #2b2b2b;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: #fff3e6;
+  color: #2b2b2b;
+}
 
-    header {
-      text-align: center;
-      padding: 80px 20px 50px;
-      background: linear-gradient(135deg, #ffd7b3, #fff3e6);
-      border-bottom: 1px solid #f0c9a8;
-    }
+/* HEADER */
+header {
+  text-align: center;
+  padding: 90px 20px 50px;
+  background: linear-gradient(135deg, #ffd2b3, #fff3e6);
+  border-bottom: 1px solid #f3c3a1;
+}
 
-    header h1 {
-      font-size: 44px;
-      letter-spacing: 6px;
-      margin: 0;
-    }
+h1 {
+  font-size: 44px;
+  letter-spacing: 6px;
+  margin: 0;
+}
 
-    header p {
-      margin-top: 10px;
-      color: #555;
-    }
+p {
+  color: #6b4a3a;
+}
 
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 18px;
-      border: 1px solid #2b2b2b;
-      color: #2b2b2b;
-      text-decoration: none;
-      transition: 0.2s;
-    }
+/* BUTTON */
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 18px;
+  border: 1px solid #c97b4f;
+  background: white;
+  color: #c97b4f;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: 0.2s;
+}
 
-    .btn:hover {
-      background: #2b2b2b;
-      color: white;
-    }
+.btn:hover {
+  background: #c97b4f;
+  color: white;
+}
 
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 40px 20px;
-    }
+/* LAYOUT */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
 
-    .card {
-      background: white;
-      border: 1px solid #f0c9a8;
-      padding: 20px;
-      border-radius: 12px;
-    }
+/* CARDS */
+.card {
+  background: white;
+  border: 1px solid #f3c3a1;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+}
 
-    h2 {
-      margin-top: 0;
-      letter-spacing: 2px;
-    }
+.line {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #f7e0d2;
+  font-size: 14px;
+}
 
-    .line {
-      display: flex;
-      justify-content: space-between;
-      padding: 8px 0;
-      border-bottom: 1px solid #eee;
-      font-size: 14px;
-    }
+/* GALLERY */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin-top: 20px;
+}
 
-    .desc {
-      margin-top: 15px;
-      color: #666;
-      font-size: 13px;
-      line-height: 1.5;
-    }
+.gallery img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid #f3c3a1;
+}
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 12px;
-      margin-top: 20px;
-    }
-
-    .gallery img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 12px;
-      border: 1px solid #f0c9a8;
-      background: #fff;
-    }
-
-    @media (max-width: 768px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+/* MOBILE */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <h1>SVG DECALS</h1>
-  <p>Clean custom vinyl decals for your build</p>
-
-  <a class="btn" href="https://instagram.com/svg.mixchell3" target="_blank">
-    Order on Instagram
-  </a>
+<h1>SVG DECALS</h1>
+<p>Custom Instagram Tag Vinyls</p>
+<a class="btn" href="https://instagram.com/svg.mixchell3" target="_blank">Order on Instagram</a>
 </header>
 
 <div class="container">
 
-  <div class="grid">
+<div class="grid">
 
-    <div class="card">
-      <h2>Custom Tags</h2>
+<!-- INFO -->
+<div class="card">
+<h2>Product Info</h2>
 
-      <div class="line">
-        <span>Size</span>
-        <span>8 inches</span>
-      </div>
+<div class="line"><span>Size</span><span>6–8 inch</span></div>
+<div class="line"><span>Price</span><span>$20 base</span></div>
+<div class="line"><span>Layered</span><span>+$5 upgrade</span></div>
 
-      <div class="line">
-        <span>Price</span>
-        <span>2 Tags — $20</span>
-      </div>
+<p style="font-size:13px;color:#7a5a4a;">
+Premium cut vinyl decals for clean car builds, windows, and show setups.
+</p>
+</div>
 
-      <div class="line">
-        <span>Colors</span>
-        <span>Black / White / Chrome</span>
-      </div>
+<!-- ORDER -->
+<div class="card">
+<h2>Order</h2>
 
-      <p class="desc">
-        Precision-cut vinyl decals designed for a clean, premium finish. Built for cars, bikes, and windows.
-      </p>
+<form id="orderForm" action="https://formspree.io/f/YOUR_ID" method="POST" onsubmit="showThankYou()">
 
-      <a class="btn" href="https://instagram.com/svg.mixchell3" target="_blank">
-        Order Now
-      </a>
-    </div>
+<input type="hidden" name="order_id" id="order_id">
 
-    <div class="card">
-      <h2>About</h2>
-      <p class="desc">
-        Minimal decal brand focused on clean car culture designs, precision cutting, and luxury vinyl aesthetics.
-      </p>
-    </div>
+<input name="name" placeholder="Name" required style="width:100%;padding:10px;margin:6px 0;border:1px solid #f3c3a1;border-radius:10px;">
 
-  </div>
+<input name="zelle_name" placeholder="Zelle Name" required style="width:100%;padding:10px;margin:6px 0;border:1px solid #f3c3a1;border-radius:10px;">
 
-  <h2 style="margin-top:40px;">Gallery</h2>
+<select id="layer" name="layer" style="width:100%;padding:10px;margin:6px 0;border:1px solid #f3c3a1;border-radius:10px;">
+<option value="0">No Layer</option>
+<option value="5">Yes (+$5 Layered)</option>
+</select>
 
-  <div class="gallery">
-    <img src="IMG1.png">
-    <img src="IMG2.png">
-    <img src="IMG3.png">
-    <img src="IMG4.png">
-  </div>
+<select name="primary_color" style="width:100%;padding:10px;margin:6px 0;border:1px solid #f3c3a1;border-radius:10px;">
+<option>Black</option><option>White</option><option>Red</option>
+<option>Blue</option><option>Green</option><option>Yellow</option>
+<option>Orange</option><option>Purple</option>
+<option>Silver Chrome</option><option>Black Chrome</option>
+<option>Reflective Silver</option><option>Reflective Black</option>
+<option>Holographic</option>
+</select>
+
+<select name="secondary_color" style="width:100%;padding:10px;margin:6px 0;border:1px solid #f3c3a1;border-radius:10px;">
+<option>None</option>
+<option>Black</option><option>White</option><option>Red</option>
+<option>Blue</option><option>Green</option><option>Yellow</option>
+<option>Orange</option><option>Purple</option>
+<option>Silver Chrome</option><option>Black Chrome</option>
+<option>Reflective Silver</option><option>Reflective Black</option>
+<option>Holographic</option>
+</select>
+
+<textarea name="notes" placeholder="Car / size / details"
+style="width:100%;padding:10px;margin:6px 0;height:80px;border:1px solid #f3c3a1;border-radius:10px;"></textarea>
+
+<p>
+Order #: <span id="orderShow"></span><br>
+Total: $<span id="total">20</span>
+</p>
+
+<p style="font-size:12px;color:#7a5a4a;">
+Send Zelle to: SVG.mixchell3@gmail.com<br>
+Then DM @svg.mixchell3 with proof + order #
+</p>
+
+<button class="btn" type="submit">Submit Order</button>
+
+</form>
+</div>
 
 </div>
+
+<!-- GALLERY -->
+<h2 style="margin-top:40px;">Gallery</h2>
+
+<div class="gallery">
+<img src="IMG1.png">
+<img src="IMG2.png">
+<img src="IMG3.png">
+<img src="IMG4.png">
+</div>
+
+<!-- CONFIRMATION -->
+<div class="card" id="thankYou" style="display:none;margin-top:20px;">
+<h2>Order Confirmed ✅</h2>
+<p>
+Order #: <span id="finalOrder"></span><br>
+We will contact you after Zelle payment confirmation.
+</p>
+</div>
+
+</div>
+
+<script>
+const layer = document.getElementById("layer");
+const total = document.getElementById("total");
+
+function updatePrice(){
+let base = 20;
+total.innerText = base + parseInt(layer.value);
+}
+layer.addEventListener("change", updatePrice);
+updatePrice();
+
+const orderId = Math.floor(1000 + Math.random()*9000);
+document.getElementById("order_id").value = orderId;
+document.getElementById("orderShow").innerText = "#"+orderId;
+
+function showThankYou(){
+document.getElementById("thankYou").style.display="block";
+document.getElementById("finalOrder").innerText="#"+orderId;
+document.getElementById("orderForm").style.display="none";
+}
+</script>
 
 </body>
 </html>
