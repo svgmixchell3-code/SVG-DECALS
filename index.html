@@ -3,258 +3,201 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SVG DECALS | Premium Vinyl</title>
+<title>SVG DECALS</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-html{scroll-behavior:smooth;}
-
 body{
   margin:0;
   font-family:"Inter",sans-serif;
-  background:#070a10;
-  color:#eef3fb;
+  background:#020409;
+  color:#eaf2ff;
 }
-
-/* NAV */
-nav{
-  position:fixed;
-  top:0;
-  width:100%;
-  display:flex;
-  justify-content:center;
-  gap:28px;
-  padding:14px;
-  background:rgba(10,12,18,0.8);
-  backdrop-filter:blur(14px);
-  border-bottom:1px solid #1c2333;
-  z-index:999;
-}
-
-nav a{
-  font-size:13px;
-  text-decoration:none;
-  color:#cfd8e4;
-}
-
-nav a:hover{color:#5aa7ff;}
 
 /* HERO */
 .hero{
   text-align:center;
-  padding:150px 20px 100px;
-  background:radial-gradient(circle at top,#121a2d,#070a10);
+  padding:120px 20px 60px;
+  background:radial-gradient(circle at top,#0a1426,#020409);
 }
 
 .hero h1{
-  font-size:70px;
+  font-size:64px;
   letter-spacing:10px;
-  margin:0;
+  color:#5aa7ff;
+  text-shadow:0 0 25px rgba(90,167,255,0.4);
 }
 
 .hero p{
-  color:#aab6c7;
-  margin-top:10px;
+  color:#8fa6c9;
 }
 
-.btn{
-  display:inline-block;
-  margin-top:20px;
-  padding:12px 24px;
-  border-radius:12px;
-  border:1px solid #5aa7ff;
-  color:#5aa7ff;
-  text-decoration:none;
-  transition:0.2s;
-}
-
-.btn:hover{
-  background:#5aa7ff;
-  color:#070a10;
-}
-
-/* SECTIONS */
-.section{
+/* LAYOUT */
+.container{
   max-width:1100px;
   margin:auto;
-  padding:80px 20px;
+  padding:40px 20px;
 }
 
-.title{
-  font-size:32px;
-  margin-bottom:20px;
-}
-
-/* GRID */
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:20px;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
 }
 
 /* CARD */
 .card{
-  background:#0d1320;
-  border:1px solid #1c2333;
-  border-radius:18px;
+  background:#050b17;
+  border:1px solid #13203a;
+  border-radius:16px;
   padding:20px;
+  box-shadow:0 0 30px rgba(0,0,0,0.6);
 }
 
-/* FORM */
+/* INPUT */
 input,select,textarea{
   width:100%;
   padding:12px;
   margin:8px 0;
   border-radius:10px;
-  border:1px solid #26324a;
-  background:#070a10;
-  color:#eef3fb;
+  border:1px solid #1f2f55;
+  background:#020409;
+  color:white;
 }
 
-/* SIZE */
-.size-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:10px;
-  margin:10px 0;
-}
-
-.size-option{
-  padding:11px;
-  text-align:center;
-  border-radius:10px;
-  border:1px solid #26324a;
-  cursor:pointer;
-  font-size:13px;
-}
-
-.size-option.active{
-  border-color:#5aa7ff;
-  color:#5aa7ff;
-}
-
-/* GALLERY */
-.gallery{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:14px;
-}
-
-.gallery img{
-  width:100%;
+/* PREVIEW */
+.preview{
   height:220px;
-  object-fit:cover;
+  background:linear-gradient(#000,#111);
+  display:flex;
+  align-items:center;
+  justify-content:center;
   border-radius:14px;
-  border:1px solid #1c2333;
+  border:1px solid #1f2f55;
+  font-size:42px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-shadow:0 0 10px rgba(255,255,255,0.3);
+}
+
+/* BUTTON */
+.btn{
+  margin-top:10px;
+  padding:12px;
+  border-radius:10px;
+  border:1px solid #5aa7ff;
+  color:#5aa7ff;
+  background:none;
+  cursor:pointer;
+}
+
+.btn:hover{
+  background:#5aa7ff;
+  color:#020409;
+}
+
+.summary{
+  margin-top:10px;
+  font-size:14px;
+  color:#9fb3d6;
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
-<nav>
-<a href="#shop">SHOP</a>
-<a href="#build">BUILD</a>
-<a href="#gallery">GALLERY</a>
-</nav>
-
-<!-- HERO -->
 <div class="hero">
 <h1>SVG DECALS</h1>
-<p>Premium automotive vinyl • Weatherproof • Clean installs</p>
-<a class="btn" href="https://instagram.com/svg.mixchell3" target="_blank">Instagram</a>
+<p>Built for clean installs • Car scene approved</p>
 </div>
 
-<!-- BUILD -->
-<div id="build" class="section">
-<div class="title">BUILD YOUR DECAL</div>
+<div class="container">
 
 <div class="grid">
 
+<!-- BUILDER -->
 <div class="card">
 
 <form action="https://formspree.io/f/xzdydgap" method="POST">
 
-<!-- INSTAGRAM -->
-<input name="instagram_name" placeholder="Instagram Name (@yourname)" required>
-
-<!-- ZELLE -->
+<input id="ig" name="instagram_name" placeholder="Instagram Name (@yourname)" required>
 <input name="zelle_name" placeholder="Zelle Name" required>
 
-<!-- SIZE -->
-<div class="size-grid">
-<div class="size-option active">5x2</div>
-<div class="size-option">6x2</div>
-<div class="size-option">7x2</div>
-<div class="size-option">8x2</div>
-</div>
+<input id="textInput" name="text" placeholder="Enter decal text" required>
 
-<!-- COLORS -->
+<label>Font (from dafont.com)</label>
+<input id="fontInput" name="font" placeholder="Type font name">
+
 <label>Primary Color</label>
-<select name="primary_color">
-<option>Black</option>
-<option>White</option>
-<option>Red</option>
-<option>Blue</option>
-<option>Chrome</option>
-<option>Holographic</option>
+<select id="color" name="primary_color">
+<option value="white">White</option>
+<option value="red">Red</option>
+<option value="orange">Orange</option>
+<option value="yellow">Yellow</option>
+<option value="green">Green</option>
+<option value="blue">Blue</option>
+<option value="purple">Purple</option>
+<option value="pink">Pink</option>
+<option value="silver">Chrome</option>
 </select>
 
 <label>Layer (+$5)</label>
-<select name="layer" id="layer">
-<option value="0">No</option>
-<option value="5">Yes</option>
+<select id="layer" name="layer">
+<option>No</option>
+<option>Yes</option>
 </select>
 
-<label>Secondary Color</label>
-<select name="secondary_color">
-<option>None</option>
-<option>Black</option>
-<option>White</option>
-<option>Chrome</option>
-<option>Holographic</option>
-</select>
-
-<!-- NOTES -->
-<textarea name="notes" placeholder="Any notes (placement, sizing, custom requests)" rows="4"></textarea>
+<textarea name="notes" placeholder="Notes (placement, size, custom requests)"></textarea>
 
 <button class="btn" type="submit">Submit Order</button>
 
 </form>
 
-<p>Send payment via Zelle: SVG.mixchell3@gmail.com</p>
+<p style="font-size:12px;color:#7f95b8;">
+Browse fonts at https://www.dafont.com
+</p>
 
 </div>
 
-</div>
+<!-- PREVIEW -->
+<div class="card">
+
+<div class="preview" id="previewText">
+YOUR TEXT
 </div>
 
-<!-- GALLERY -->
-<div id="gallery" class="section">
-<div class="title">GALLERY</div>
+<div class="summary" id="summary">
+Live preview will update here
+</div>
 
-<div class="gallery">
-<img src="IMG1.png">
-<img src="IMG2.png">
-<img src="IMG3.png">
-<img src="IMG4.png">
+</div>
+
 </div>
 
 </div>
 
 <script>
-// SIZE SELECT
-document.querySelectorAll(".size-option").forEach(btn=>{
-btn.onclick=()=>{
-document.querySelectorAll(".size-option").forEach(b=>b.classList.remove("active"));
-btn.classList.add("active");
-};
-});
+const textInput = document.getElementById("textInput");
+const preview = document.getElementById("previewText");
+const color = document.getElementById("color");
+const fontInput = document.getElementById("fontInput");
+const summary = document.getElementById("summary");
 
-// PRICE LOGIC (optional future upgrade ready)
-const layer=document.getElementById("layer");
+function updatePreview(){
+  preview.innerText = textInput.value || "YOUR TEXT";
+  preview.style.color = color.value;
+  preview.style.fontFamily = fontInput.value || "Inter";
+
+  summary.innerHTML =
+    "Text: " + (textInput.value || "-") + "<br>" +
+    "Color: " + color.value + "<br>" +
+    "Font: " + (fontInput.value || "-");
+}
+
+textInput.addEventListener("input", updatePreview);
+color.addEventListener("change", updatePreview);
+fontInput.addEventListener("input", updatePreview);
 </script>
 
 </body>
