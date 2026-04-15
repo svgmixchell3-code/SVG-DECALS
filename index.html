@@ -9,23 +9,17 @@
 
 <style>
 
-/* =======================
-   BASE
-======================= */
 body{
   margin:0;
   font-family:"Inter",sans-serif;
   color:#eef3f8;
-
   background:
     radial-gradient(circle at 20% 20%, rgba(255,255,255,0.05), transparent 45%),
     radial-gradient(circle at 80% 40%, rgba(120,140,170,0.07), transparent 50%),
     linear-gradient(180deg, #07090d, #0b0f14);
 }
 
-/* =======================
-   HEADER
-======================= */
+/* HERO */
 .hero{
   text-align:center;
   padding:70px 20px 10px;
@@ -42,9 +36,7 @@ body{
   font-size:14px;
 }
 
-/* =======================
-   LAYOUT
-======================= */
+/* LAYOUT */
 .container{
   max-width:1000px;
   margin:auto;
@@ -53,9 +45,7 @@ body{
   gap:20px;
 }
 
-/* =======================
-   FORM CARD
-======================= */
+/* FORM */
 .card{
   flex:1;
   background:#111826;
@@ -64,9 +54,7 @@ body{
   padding:18px;
 }
 
-/* =======================
-   INPUTS
-======================= */
+/* INPUTS */
 input,select,textarea{
   width:100%;
   padding:12px;
@@ -77,9 +65,7 @@ input,select,textarea{
   color:white;
 }
 
-/* =======================
-   BUTTON
-======================= */
+/* BUTTON */
 .btn{
   width:100%;
   padding:12px;
@@ -95,9 +81,7 @@ input,select,textarea{
   color:#0b0f14;
 }
 
-/* =======================
-   PRICE
-======================= */
+/* PRICE */
 .priceBox{
   background:#0b0f14;
   border:1px solid #24344a;
@@ -107,9 +91,7 @@ input,select,textarea{
   margin:10px 0;
 }
 
-/* =======================
-   PREVIEW PANEL
-======================= */
+/* PREVIEW */
 .preview{
   flex:1;
   height:420px;
@@ -125,9 +107,7 @@ input,select,textarea{
   top:20px;
 }
 
-/* =======================
-   GALLERY
-======================= */
+/* GALLERY */
 .gallery{
   margin-top:25px;
   display:grid;
@@ -143,18 +123,7 @@ input,select,textarea{
   border:1px solid #1e2a3a;
 }
 
-/* =======================
-   INFO
-======================= */
-.info{
-  font-size:13px;
-  color:#aab4c0;
-  margin-top:10px;
-}
-
-/* =======================
-   MOBILE
-======================= */
+/* MOBILE */
 @media (max-width: 900px){
   .container{
     flex-direction:column;
@@ -189,7 +158,6 @@ input,select,textarea{
 <!-- FONT -->
 <label>Font Style</label>
 <select id="fontSelect" name="font">
-
 <option>Inter</option>
 <option>Arial</option>
 <option>Helvetica</option>
@@ -208,16 +176,15 @@ input,select,textarea{
 <option>Gill Sans</option>
 <option>Optima</option>
 <option>Trebuchet MS</option>
-
 </select>
 
-<!-- SIZE -->
+<!-- SIZE (NO PRICE ATTACHED) -->
 <label>Size</label>
 <select id="size" name="size">
-<option value="20">5 inch</option>
-<option value="22">6 inch</option>
-<option value="24">7 inch</option>
-<option value="26">8 inch</option>
+<option>5 inch</option>
+<option>6 inch</option>
+<option>7 inch</option>
+<option>8 inch</option>
 </select>
 
 <!-- COLOR -->
@@ -261,12 +228,6 @@ input,select,textarea{
 
 </form>
 
-<div class="info">
-Zelle: <b>SVG DECALS</b><br>
-Email: <b>SVG.mixchell3@gmail.com</b><br>
-Orders are custom made after payment confirmation
-</div>
-
 </div>
 
 <!-- PREVIEW -->
@@ -303,17 +264,16 @@ function updatePreview(){
 textInput.addEventListener("input", updatePreview);
 fontSelect.addEventListener("change", updatePreview);
 
-/* PRICE */
-const size = document.getElementById("size");
+/* PRICE (LOCKED) */
 const layer = document.getElementById("layer");
 const priceBox = document.getElementById("priceBox");
 
 function updatePrice(){
-  let price = parseInt(size.value) + parseInt(layer.value);
+  let price = 20; // ALWAYS BASE
+  if(layer.value === "5") price += 5;
   priceBox.innerText = "Total: $" + price;
 }
 
-size.addEventListener("change", updatePrice);
 layer.addEventListener("change", updatePrice);
 
 </script>
