@@ -11,89 +11,85 @@
 body{
   margin:0;
   font-family:"Inter",sans-serif;
-  background:#0b0d10;
-  color:#e9eef5;
+  background:#0a0d12;
+  color:#e9eef6;
 }
 
-/* HEADER */
-header{
+/* HERO */
+.hero{
   text-align:center;
-  padding:90px 20px 60px;
-  background:linear-gradient(135deg,#121824,#0b0d10);
-  border-bottom:1px solid #1f2633;
+  padding:120px 20px 90px;
+  background:linear-gradient(135deg,#121826,#0a0d12);
+  border-bottom:1px solid #1e2635;
 }
 
-h1{
-  font-size:48px;
-  letter-spacing:6px;
+.hero h1{
+  font-size:56px;
+  letter-spacing:8px;
   margin:0;
 }
 
-p{
-  color:#a9b4c2;
+.hero p{
+  color:#aab4c2;
+  margin-top:10px;
 }
 
-/* BUTTON */
 .btn{
   display:inline-block;
-  margin-top:20px;
-  padding:11px 20px;
+  margin-top:25px;
+  padding:12px 22px;
   border:1px solid #5aa7ff;
   color:#5aa7ff;
-  text-decoration:none;
   border-radius:12px;
+  text-decoration:none;
   transition:0.2s;
-  font-weight:500;
 }
 
 .btn:hover{
   background:#5aa7ff;
-  color:#0b0d10;
+  color:#0a0d12;
 }
 
-/* LAYOUT */
-.container{
+/* SECTIONS */
+.section{
   max-width:1100px;
   margin:auto;
-  padding:40px 20px;
+  padding:70px 20px;
 }
 
+.title{
+  font-size:26px;
+  margin-bottom:15px;
+  letter-spacing:2px;
+}
+
+/* GRID */
 .grid{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:20px;
 }
 
-/* CARD */
+/* CARDS */
 .card{
-  background:#121824;
-  border:1px solid #202838;
+  background:#111826;
+  border:1px solid #1e2635;
   border-radius:16px;
   padding:20px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.35);
 }
 
-.line{
-  display:flex;
-  justify-content:space-between;
-  padding:8px 0;
-  border-bottom:1px solid #1f2633;
-  font-size:14px;
-  color:#c9d3e1;
-}
-
-/* INPUTS */
+/* FORM */
 input,select{
   width:100%;
   padding:10px;
   margin:6px 0;
   border-radius:10px;
-  border:1px solid #263041;
-  background:#0b0d10;
-  color:#e9eef5;
+  border:1px solid #27324a;
+  background:#0a0d12;
+  color:#e9eef6;
 }
 
-/* SIZE SELECTOR */
+/* SIZE BUTTONS */
 .size-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
@@ -104,15 +100,10 @@ input,select{
 .size-option{
   text-align:center;
   padding:12px;
-  border-radius:12px;
-  border:1px solid #263041;
+  border-radius:10px;
+  border:1px solid #27324a;
   cursor:pointer;
-  background:#0b0d10;
-  transition:0.2s;
-}
-
-.size-option:hover{
-  border-color:#5aa7ff;
+  background:#0a0d12;
 }
 
 .size-option.active{
@@ -123,62 +114,55 @@ input,select{
 /* GALLERY */
 .gallery{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:12px;
-  margin-top:20px;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:14px;
 }
 
 .gallery img{
   width:100%;
-  height:200px;
+  height:210px;
   object-fit:cover;
   border-radius:12px;
-  border:1px solid #263041;
+  border:1px solid #27324a;
 }
 
-/* MOBILE */
-@media(max-width:768px){
-  .grid{grid-template-columns:1fr;}
+/* TEXT */
+.muted{
+  color:#aab4c2;
+  font-size:14px;
 }
 </style>
 </head>
 
 <body>
 
-<header>
+<!-- HERO -->
+<div class="hero">
 <h1>SVG DECALS</h1>
-<p>Weatherproof vinyl decals built for clean car & bike builds</p>
+<p>Premium weatherproof vinyl Instagram tags for clean builds</p>
 <a class="btn" href="https://instagram.com/svg.mixchell3" target="_blank">Order on Instagram</a>
-</header>
+</div>
 
-<div class="container">
+<!-- ABOUT -->
+<div class="section">
+<div class="title">ABOUT</div>
+<p class="muted">
+We design and cut high-quality weatherproof vinyl decals built for cars, bikes, and show builds. 
+Clean installs, long durability, and premium finish options including chrome and holographic vinyl.
+</p>
+</div>
+
+<!-- ORDER -->
+<div class="section">
+<div class="title">CUSTOM ORDER</div>
 
 <div class="grid">
 
 <!-- INFO -->
 <div class="card">
-<h2>Product Info</h2>
+<h3>Product Builder</h3>
 
-<div class="line"><span>Material</span><span>Weatherproof Vinyl</span></div>
-<div class="line"><span>Use</span><span>Cars • Bikes • Windows</span></div>
-<div class="line"><span>Finish</span><span>Gloss / Chrome / Holo</span></div>
-
-<p style="color:#a9b4c2;font-size:13px;">
-Built to last outdoors — UV resistant, water resistant, and made for clean installs on any surface.
-</p>
-</div>
-
-<!-- ORDER -->
-<div class="card">
-<h2>Customize Order</h2>
-
-<form id="orderForm" onsubmit="showThankYou(); return false;">
-
-<input type="hidden" name="order_id" id="order_id">
-
-<input name="name" placeholder="Name" required>
-
-<input name="zelle_name" placeholder="Zelle Name" required>
+<p class="muted">Select your options below to customize your decal.</p>
 
 <!-- SIZE -->
 <label>Size</label>
@@ -188,57 +172,63 @@ Built to last outdoors — UV resistant, water resistant, and made for clean ins
   <div class="size-option" data-size="7x2">7x2</div>
   <div class="size-option" data-size="8x2">8x2</div>
 </div>
-<input type="hidden" name="size" id="sizeInput" value="5x2">
+<input type="hidden" id="sizeInput" value="5x2">
 
-<!-- PRIMARY -->
+<!-- COLORS -->
 <label>Primary Color</label>
-<select name="primary_color">
+<select>
 <option>Black</option><option>White</option><option>Red</option>
 <option>Blue</option><option>Green</option><option>Yellow</option>
 <option>Orange</option><option>Purple</option>
-<option>Silver Chrome</option><option>Black Chrome</option>
-<option>Reflective Silver</option><option>Reflective Black</option>
-<option>Holographic</option>
+<option>Chrome Silver</option><option>Chrome Black</option>
+<option>Reflective Silver</option><option>Holographic</option>
 </select>
 
-<!-- LAYER -->
 <label>Layer (+$5)</label>
-<select id="layer" name="layer">
-<option value="0">No Layer</option>
+<select id="layer">
+<option value="0">No</option>
 <option value="5">Yes</option>
 </select>
 
-<!-- SECONDARY -->
 <label>Secondary Color</label>
-<select name="secondary_color">
-<option>None</option>
-<option>Black</option><option>White</option><option>Red</option>
-<option>Blue</option><option>Green</option><option>Yellow</option>
-<option>Orange</option><option>Purple</option>
-<option>Silver Chrome</option><option>Black Chrome</option>
-<option>Reflective Silver</option><option>Reflective Black</option>
-<option>Holographic</option>
+<select>
+<option>None</option><option>Black</option><option>White</option>
+<option>Red</option><option>Blue</option><option>Green</option>
+<option>Chrome Silver</option><option>Holographic</option>
 </select>
 
-<p>
-Order #: <span id="orderShow"></span><br>
-Total: $<span id="total">20</span>
-</p>
+</div>
 
-<p style="font-size:12px;color:#a9b4c2;">
-Send Zelle to: SVG.mixchell3@gmail.com<br>
-Then DM proof + order number
+<!-- ORDER FORM -->
+<div class="card">
+<h3>Checkout (Zelle)</h3>
+
+<form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+<input name="name" placeholder="Name" required>
+<input name="zelle_name" placeholder="Zelle Name" required>
+
+<p class="muted">
+Send payment to:<br>
+<strong>SVG.mixchell3@gmail.com</strong>
 </p>
 
 <button class="btn" type="submit">Submit Order</button>
 
 </form>
+
+<p class="muted" style="margin-top:10px;">
+You will receive an email confirmation after submission.
+</p>
+
 </div>
 
+</div>
 </div>
 
 <!-- GALLERY -->
-<h2 style="margin-top:40px;">Gallery</h2>
+<div class="section">
+<div class="title">GALLERY</div>
 
 <div class="gallery">
 <img src="IMG1.png">
@@ -247,49 +237,20 @@ Then DM proof + order number
 <img src="IMG4.png">
 </div>
 
-<!-- CONFIRM -->
-<div class="card" id="thankYou" style="display:none;margin-top:20px;">
-<h2>Order Confirmed ✅</h2>
-<p>Order #: <span id="finalOrder"></span></p>
-</div>
-
 </div>
 
 <script>
 // SIZE SELECTOR
-const sizeOptions=document.querySelectorAll(".size-option");
-const sizeInput=document.getElementById("sizeInput");
+const options=document.querySelectorAll(".size-option");
+const input=document.getElementById("sizeInput");
 
-sizeOptions.forEach(opt=>{
-opt.addEventListener("click",()=>{
-sizeOptions.forEach(o=>o.classList.remove("active"));
-opt.classList.add("active");
-sizeInput.value=opt.dataset.size;
+options.forEach(o=>{
+o.addEventListener("click",()=>{
+options.forEach(x=>x.classList.remove("active"));
+o.classList.add("active");
+input.value=o.dataset.size;
 });
 });
-
-// PRICE
-const layer=document.getElementById("layer");
-const total=document.getElementById("total");
-
-function updatePrice(){
-let base=20;
-total.innerText=base+parseInt(layer.value);
-}
-layer.addEventListener("change",updatePrice);
-updatePrice();
-
-// ORDER ID
-const orderId=Math.floor(1000+Math.random()*9000);
-document.getElementById("order_id").value=orderId;
-document.getElementById("orderShow").innerText="#"+orderId;
-
-// CONFIRM
-function showThankYou(){
-document.getElementById("thankYou").style.display="block";
-document.getElementById("finalOrder").innerText="#"+orderId;
-document.getElementById("orderForm").style.display="none";
-}
 </script>
 
 </body>
