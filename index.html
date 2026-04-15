@@ -5,26 +5,51 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SVG DECALS</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 body{
   margin:0;
   font-family:"Inter",sans-serif;
   background:#0a0d12;
-  color:#e9eef6;
+  color:#eaf0f6;
+  scroll-behavior:smooth;
+}
+
+/* NAV */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:#0a0d12;
+  border-bottom:1px solid #1e2635;
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  padding:14px;
+  z-index:999;
+}
+
+nav a{
+  color:#cfd8e3;
+  text-decoration:none;
+  font-weight:500;
+  font-size:14px;
+}
+
+nav a:hover{
+  color:#5aa7ff;
 }
 
 /* HERO */
 .hero{
   text-align:center;
-  padding:120px 20px 90px;
+  padding:140px 20px 80px;
   background:linear-gradient(135deg,#121826,#0a0d12);
-  border-bottom:1px solid #1e2635;
 }
 
 .hero h1{
-  font-size:56px;
+  font-size:60px;
   letter-spacing:8px;
   margin:0;
 }
@@ -36,13 +61,12 @@ body{
 
 .btn{
   display:inline-block;
-  margin-top:25px;
+  margin-top:20px;
   padding:12px 22px;
   border:1px solid #5aa7ff;
   color:#5aa7ff;
   border-radius:12px;
   text-decoration:none;
-  transition:0.2s;
 }
 
 .btn:hover{
@@ -52,30 +76,48 @@ body{
 
 /* SECTIONS */
 .section{
-  max-width:1100px;
+  max-width:1200px;
   margin:auto;
   padding:70px 20px;
 }
 
 .title{
-  font-size:26px;
-  margin-bottom:15px;
+  font-size:28px;
+  margin-bottom:20px;
   letter-spacing:2px;
 }
 
 /* GRID */
 .grid{
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:18px;
 }
 
-/* CARDS */
+/* CARD */
 .card{
-  background:#111826;
+  background:#121826;
   border:1px solid #1e2635;
   border-radius:16px;
-  padding:20px;
+  padding:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.35);
+}
+
+/* PRODUCT CARD */
+.product{
+  border:1px solid #1e2635;
+  border-radius:14px;
+  padding:15px;
+  background:#0a0d12;
+}
+
+.product h3{
+  margin:0;
+}
+
+.muted{
+  color:#aab4c2;
+  font-size:13px;
 }
 
 /* FORM */
@@ -86,24 +128,22 @@ input,select{
   border-radius:10px;
   border:1px solid #27324a;
   background:#0a0d12;
-  color:#e9eef6;
+  color:#eaf0f6;
 }
 
-/* SIZE BUTTONS */
+/* SIZE */
 .size-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:10px;
-  margin:10px 0;
 }
 
 .size-option{
   text-align:center;
-  padding:12px;
-  border-radius:10px;
+  padding:10px;
   border:1px solid #27324a;
+  border-radius:10px;
   cursor:pointer;
-  background:#0a0d12;
 }
 
 .size-option.active{
@@ -126,104 +166,123 @@ input,select{
   border:1px solid #27324a;
 }
 
-/* TEXT */
-.muted{
-  color:#aab4c2;
-  font-size:14px;
+/* MOBILE */
+@media(max-width:768px){
+  .hero h1{font-size:42px;}
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
+<nav>
+<a href="#stickers">STICKERS</a>
+<a href="#banners">BANNERS</a>
+<a href="#decals">DECALS</a>
+<a href="#tags">TAGS</a>
+</nav>
+
 <!-- HERO -->
 <div class="hero">
 <h1>SVG DECALS</h1>
-<p>Premium weatherproof vinyl Instagram tags for clean builds</p>
+<p>Premium weatherproof vinyl built for clean automotive setups</p>
 <a class="btn" href="https://instagram.com/svg.mixchell3" target="_blank">Order on Instagram</a>
 </div>
 
-<!-- ABOUT -->
-<div class="section">
-<div class="title">ABOUT</div>
-<p class="muted">
-We design and cut high-quality weatherproof vinyl decals built for cars, bikes, and show builds. 
-Clean installs, long durability, and premium finish options including chrome and holographic vinyl.
-</p>
+<!-- STICKERS -->
+<div id="stickers" class="section">
+<div class="title">STICKERS</div>
+
+<div class="grid">
+<div class="product">
+<h3>Custom Stickers</h3>
+<p class="muted">Weatherproof vinyl stickers for clean branding.</p>
+</div>
+</div>
 </div>
 
-<!-- ORDER -->
-<div class="section">
-<div class="title">CUSTOM ORDER</div>
+<!-- BANNERS -->
+<div id="banners" class="section">
+<div class="title">BANNERS</div>
+
+<div class="grid">
+<div class="product">
+<h3>Custom Banners</h3>
+<p class="muted">Shop banners, car meet banners, event displays.</p>
+</div>
+</div>
+</div>
+
+<!-- DECALS (MAIN ORDER BUILDER) -->
+<div id="decals" class="section">
+<div class="title">DECALS BUILDER</div>
 
 <div class="grid">
 
-<!-- INFO -->
+<!-- BUILDER -->
 <div class="card">
-<h3>Product Builder</h3>
+<h3>Customize Your Decal</h3>
 
-<p class="muted">Select your options below to customize your decal.</p>
+<input placeholder="Name">
+<input placeholder="Zelle Name">
 
-<!-- SIZE -->
-<label>Size</label>
 <div class="size-grid">
-  <div class="size-option active" data-size="5x2">5x2</div>
-  <div class="size-option" data-size="6x2">6x2</div>
-  <div class="size-option" data-size="7x2">7x2</div>
-  <div class="size-option" data-size="8x2">8x2</div>
+<div class="size-option active">5x2</div>
+<div class="size-option">6x2</div>
+<div class="size-option">7x2</div>
+<div class="size-option">8x2</div>
 </div>
-<input type="hidden" id="sizeInput" value="5x2">
 
-<!-- COLORS -->
 <label>Primary Color</label>
 <select>
 <option>Black</option><option>White</option><option>Red</option>
-<option>Blue</option><option>Green</option><option>Yellow</option>
-<option>Orange</option><option>Purple</option>
-<option>Chrome Silver</option><option>Chrome Black</option>
-<option>Reflective Silver</option><option>Holographic</option>
+<option>Blue</option><option>Chrome</option><option>Holographic</option>
 </select>
 
 <label>Layer (+$5)</label>
-<select id="layer">
-<option value="0">No</option>
-<option value="5">Yes</option>
+<select>
+<option>No</option><option>Yes</option>
 </select>
 
 <label>Secondary Color</label>
 <select>
 <option>None</option><option>Black</option><option>White</option>
-<option>Red</option><option>Blue</option><option>Green</option>
-<option>Chrome Silver</option><option>Holographic</option>
+<option>Chrome</option><option>Holographic</option>
 </select>
 
-</div>
-
-<!-- ORDER FORM -->
-<div class="card">
-<h3>Checkout (Zelle)</h3>
+<p class="muted">
+Send Zelle: SVG.mixchell3@gmail.com
+</p>
 
 <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-
-<input name="name" placeholder="Name" required>
-<input name="zelle_name" placeholder="Zelle Name" required>
-
-<p class="muted">
-Send payment to:<br>
-<strong>SVG.mixchell3@gmail.com</strong>
-</p>
-
 <button class="btn" type="submit">Submit Order</button>
-
 </form>
 
-<p class="muted" style="margin-top:10px;">
-You will receive an email confirmation after submission.
+</div>
+
+<!-- INFO -->
+<div class="card">
+<h3>Why Us</h3>
+<p class="muted">
+Weatherproof vinyl decals built for durability, clean installs, and car culture aesthetics.
 </p>
-
 </div>
 
 </div>
+</div>
+
+<!-- TAGS -->
+<div id="tags" class="section">
+<div class="title">TAGS</div>
+
+<div class="grid">
+<div class="product">
+<h3>Instagram Tags</h3>
+<p class="muted">Custom branded tags for builds and socials.</p>
+</div>
+</div>
+
 </div>
 
 <!-- GALLERY -->
@@ -240,15 +299,12 @@ You will receive an email confirmation after submission.
 </div>
 
 <script>
-// SIZE SELECTOR
-const options=document.querySelectorAll(".size-option");
-const input=document.getElementById("sizeInput");
-
-options.forEach(o=>{
-o.addEventListener("click",()=>{
-options.forEach(x=>x.classList.remove("active"));
-o.classList.add("active");
-input.value=o.dataset.size;
+// SIZE SELECT
+const sizes=document.querySelectorAll(".size-option");
+sizes.forEach(s=>{
+s.addEventListener("click",()=>{
+sizes.forEach(x=>x.classList.remove("active"));
+s.classList.add("active");
 });
 });
 </script>
